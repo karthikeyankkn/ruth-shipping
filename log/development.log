@@ -3207,3 +3207,956 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 61ms (Views: 52.6ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for ::1 at 2019-06-04 16:37:20 +0530
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/karthikeyan/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.1ms)
+  Rendered shared/_header.html.erb (0.8ms)
+Completed 200 OK in 281ms (Views: 273.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-06-04 16:37:27 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MjXvW9+kQrr1d1Ay7W7J+FjZZCRyz309AkEsNf8sb+HT1L5bd1qAZD7tp3D8zf5fiI4zQ/YDkdK72xxzIJzNeQ==", "session"=>{"email"=>"karthikeyan@spinircle.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "karthikeyan@spinircle.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 102ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/4" for ::1 at 2019-06-04 16:37:27 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:10
+  Rendered shared/_header.html.erb (4.0ms)
+Completed 200 OK in 39ms (Views: 34.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/4" for ::1 at 2019-06-04 16:37:29 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:10
+  Rendered shared/_header.html.erb (1.4ms)
+Completed 200 OK in 54ms (Views: 47.8ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddRememberDigestToUsers (20190604111200)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_digest" varchar[0m
+  ↳ db/migrate/20190604111200_add_remember_digest_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190604111200"]]
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started DELETE "/logout" for ::1 at 2019-06-04 16:57:25 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/karthikeyan/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"THRfFG55j5iidaO0K+SVX60/0grqo4c6ay0aOuSBuOatlQ4UxodNRmnvVPY6R6L4fWiFbW5va9XStyp8OzEafg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:39
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.5ms)
+
+
+  
+NoMethodError (undefined method `forget' for nil:NilClass):
+  
+app/helpers/sessions_helper.rb:34:in `forget'
+app/helpers/sessions_helper.rb:41:in `log_out'
+app/controllers/sessions_controller.rb:20:in `destroy'
+Started DELETE "/logout" for ::1 at 2019-06-04 17:01:17 +0530
+  
+SyntaxError (/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+    ?user = User.find_by(email: par
+     ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+    if ?user && ?user.authenticate(par
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '1
+            ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+member_me] == '1' ? remember(?user) : forget(?user)
+                              ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+    else
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input
+Started DELETE "/logout" for ::1 at 2019-06-04 17:01:22 +0530
+  
+SyntaxError (/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+    ?user = User.find_by(email: par
+     ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+    if ?user && ?user.authenticate(par
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '1
+            ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+member_me] == '1' ? remember(?user) : forget(?user)
+                              ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+    else
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/" for ::1 at 2019-06-04 17:17:19 +0530
+  
+SyntaxError (/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+    ?user = User.find_by(email: par
+     ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+    if ?user && ?user.authenticate(par
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '1
+            ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+member_me] == '1' ? remember(?user) : forget(?user)
+                              ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+    else
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/" for ::1 at 2019-06-04 17:20:26 +0530
+  
+SyntaxError (/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+    ?user = User.find_by(email: par
+     ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+    if ?user && ?user.authenticate(par
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '1
+            ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+member_me] == '1' ? remember(?user) : forget(?user)
+                              ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+    else
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/" for ::1 at 2019-06-04 17:20:56 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/karthikeyan/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+    ?user = User.find_by(email: par
+     ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+    if ?user && ?user.authenticate(par
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '1
+            ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+member_me] == '1' ? remember(?user) : forget(?user)
+                              ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+    else
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input
+Started POST "/__web_console/repl_sessions/a8e9f0d0b904bbd378a35330433b2ed6/trace" for ::1 at 2019-06-04 17:26:19 +0530
+Started POST "/__web_console/repl_sessions/a8e9f0d0b904bbd378a35330433b2ed6/trace" for ::1 at 2019-06-04 17:26:23 +0530
+Started POST "/__web_console/repl_sessions/a8e9f0d0b904bbd378a35330433b2ed6/trace" for ::1 at 2019-06-04 17:27:21 +0530
+Started GET "/" for ::1 at 2019-06-04 17:48:33 +0530
+  
+SyntaxError (/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+    ?user = User.find_by(email: par
+     ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+    if ?user && ?user.authenticate(par
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '1
+            ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+member_me] == '1' ? remember(?user) : forget(?user)
+                              ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+    else
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/" for ::1 at 2019-06-04 17:48:54 +0530
+  
+SyntaxError (/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+    ?user = User.find_by(email: par
+     ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+    if ?user && ?user.authenticate(par
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '1
+            ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+member_me] == '1' ? remember(?user) : forget(?user)
+                              ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+    else
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/users/new" for ::1 at 2019-06-04 17:48:59 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (10.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  Rendered shared/_header.html.erb (5.9ms)
+Completed 200 OK in 310ms (Views: 290.3ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-06-04 17:49:10 +0530
+  
+SyntaxError (/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+    ?user = User.find_by(email: par
+     ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+    if ?user && ?user.authenticate(par
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '1
+            ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+member_me] == '1' ? remember(?user) : forget(?user)
+                              ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+    else
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/login" for ::1 at 2019-06-04 17:49:14 +0530
+  
+SyntaxError (/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+    ?user = User.find_by(email: par
+     ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+    if ?user && ?user.authenticate(par
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '1
+            ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+member_me] == '1' ? remember(?user) : forget(?user)
+                              ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+    else
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/users/new" for ::1 at 2019-06-04 17:49:18 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (6.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  Rendered shared/_header.html.erb (2.1ms)
+Completed 200 OK in 46ms (Views: 41.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for ::1 at 2019-06-04 17:49:24 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (6.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  Rendered shared/_header.html.erb (1.4ms)
+Completed 200 OK in 56ms (Views: 51.2ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-06-04 17:49:29 +0530
+  
+SyntaxError (/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+    ?user = User.find_by(email: par
+     ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+    if ?user && ?user.authenticate(par
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '1
+            ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+member_me] == '1' ? remember(?user) : forget(?user)
+                              ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+    else
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input
+Started DELETE "/logout" for ::1 at 2019-06-04 17:49:51 +0530
+  
+SyntaxError (/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+    ?user = User.find_by(email: par
+     ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+    if ?user && ?user.authenticate(par
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '1
+            ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+member_me] == '1' ? remember(?user) : forget(?user)
+                              ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+    else
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input
+Started DELETE "/logout" for ::1 at 2019-06-04 17:51:15 +0530
+  
+SyntaxError (/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+    ? user =  User.find_by(email: p
+     ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+    if ? user && ? user.authenticate(p
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '1
+            ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+member_me] == '1' ? remember(? user) : forget(? user)
+                              ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+    else
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/" for ::1 at 2019-06-04 17:51:18 +0530
+  
+SyntaxError (/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+    ? user =  User.find_by(email: p
+     ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+    if ? user && ? user.authenticate(p
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '1
+            ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+member_me] == '1' ? remember(? user) : forget(? user)
+                              ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+    else
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/" for ::1 at 2019-06-04 17:51:32 +0530
+  
+SyntaxError (/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+    ? user =  User.find_by(email: p
+     ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+    if ? user && ? user.authenticate(p
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '1
+            ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+member_me] == '1' ? remember(? user) : forget(? user)
+                              ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+    else
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/" for ::1 at 2019-06-04 17:52:14 +0530
+  
+SyntaxError (/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+    ?user = User.find_by(email: par
+     ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+    if ?user && ?user.authenticate(par
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '1
+            ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+member_me] == '1' ? remember(?user) : forget(?user)
+                              ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+    else
+        ^
+/Users/karthikeyan/Documents/spini/marketing-tool/app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:7: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:9: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:11: syntax error, unexpected keyword_else, expecting ':'
+app/controllers/sessions_controller.rb:22: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/" for ::1 at 2019-06-04 18:00:42 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  Rendered shared/_header.html.erb (20.8ms)
+Completed 200 OK in 62ms (Views: 54.8ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/login" for ::1 at 2019-06-04 18:00:57 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jsMAP/egg0jb4ZG7/35Qd00PSUdAQCDgzRVHS2oJ5FpvIlE/X15BlhB7Zvnu3WfQnVgeIMSMzA90j3cNtblGwg==", "session"=>{"email"=>"karthikeyan@spinircle.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "karthikeyan@spinircle.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:39
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 88ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/4" for ::1 at 2019-06-04 18:00:57 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  Rendered shared/_header.html.erb (1.5ms)
+Completed 200 OK in 37ms (Views: 33.0ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-06-04 18:01:04 +0530
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cUZ64ew3pP1WicNmwT1FlA7O3jpoyZQSfA5Srwst7PeQpyvhRMlmI50TNCTQnnIz3pmJXewFeP3FlGLp1J1Obw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:39
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `forget' for nil:NilClass):
+  
+app/helpers/sessions_helper.rb:35:in `forget'
+app/helpers/sessions_helper.rb:42:in `log_out'
+app/controllers/sessions_controller.rb:19:in `destroy'
+Started DELETE "/logout" for ::1 at 2019-06-04 18:01:39 +0530
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cUZ64ew3pP1WicNmwT1FlA7O3jpoyZQSfA5Srwst7PeQpyvhRMlmI50TNCTQnnIz3pmJXewFeP3FlGLp1J1Obw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:39
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.9ms)
+
+
+  
+NoMethodError (undefined method `forget' for nil:NilClass):
+  
+app/helpers/sessions_helper.rb:35:in `forget'
+app/helpers/sessions_helper.rb:42:in `log_out'
+app/controllers/sessions_controller.rb:19:in `destroy'
+Started GET "/" for ::1 at 2019-06-04 18:01:42 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  Rendered shared/_header.html.erb (4.0ms)
+Completed 200 OK in 72ms (Views: 66.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 18:01:44 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  Rendered shared/_header.html.erb (1.9ms)
+Completed 200 OK in 60ms (Views: 57.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/login" for ::1 at 2019-06-04 18:02:09 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VFeQgz262dmNVAt9gPZAPbPtvvZK4Xubbfs7k2+FjPa1tsGDlUQbB0bO/D+RVXeaY7rpkc4tl3TUYQvVsDUubg==", "session"=>{"email"=>"karthikeyan@spinircle.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "karthikeyan@spinircle.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:39
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 87ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/4" for ::1 at 2019-06-04 18:02:09 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  Rendered shared/_header.html.erb (1.5ms)
+Completed 200 OK in 41ms (Views: 37.4ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-06-04 18:02:13 +0530
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HiAJGYvXm8nCLWnTguDsaRkjdmCdI0dClJ9P55IYBoH/wVgZIylZFwm3npGTQ9vOyXQhBxnvq60tBX+hTaikGQ=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:39
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `forget' for nil:NilClass):
+  
+app/helpers/sessions_helper.rb:35:in `forget'
+app/helpers/sessions_helper.rb:42:in `log_out'
+app/controllers/sessions_controller.rb:19:in `destroy'
+Started GET "/" for ::1 at 2019-06-11 16:06:56 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/karthikeyan/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (22.6ms)
+  Rendered shared/_header.html.erb (5.9ms)
+Completed 200 OK in 420ms (Views: 407.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-06-11 16:07:06 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BFwkbdfi/Jp3jK/FPrP5QKAToatIjXWp44GFZnwT2ivlb1xLXzMr7MotsWwgs6iFrKvhCBIB+NxGG5Ddyjkihw==", "session"=>{"email"=>"kknmalar3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kknmalar3@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:39
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 109ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/users/3" for ::1 at 2019-06-11 16:07:06 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  Rendered shared/_header.html.erb (2.2ms)
+Completed 200 OK in 75ms (Views: 50.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3" for ::1 at 2019-06-11 16:07:11 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  Rendered shared/_header.html.erb (2.0ms)
+Completed 200 OK in 55ms (Views: 48.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3" for ::1 at 2019-06-11 16:07:12 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  Rendered shared/_header.html.erb (1.5ms)
+Completed 200 OK in 68ms (Views: 61.8ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-06-11 16:07:14 +0530
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"EHoGvZXyBCIn0nkFj7XH+OO3/wPMbTaYi8/HZ8fvQCDxSX6bHSPTVJpzZ6yRtZY97w+/oJbhu+0uVdLcccW4jA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:39
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `forget' for nil:NilClass):
+  
+app/helpers/sessions_helper.rb:35:in `forget'
+app/helpers/sessions_helper.rb:42:in `log_out'
+app/controllers/sessions_controller.rb:19:in `destroy'
+Started GET "/users/3" for ::1 at 2019-06-11 16:09:18 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  Rendered shared/_header.html.erb (1.3ms)
+Completed 200 OK in 52ms (Views: 46.3ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-06-11 16:09:20 +0530
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VFzjOOHc4LBHQSrD8pQ+TP8ZdpGWOiz5kfjeb9AoMvK1b5seaQ03xvrgNGrslG+J86E2Msy2oYw0YsvUZgLKXg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:39
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `forget' for nil:NilClass):
+  
+app/helpers/sessions_helper.rb:35:in `forget'
+app/helpers/sessions_helper.rb:42:in `log_out'
+app/controllers/sessions_controller.rb:19:in `destroy'
+Started GET "/" for ::1 at 2019-06-11 16:09:26 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  Rendered shared/_header.html.erb (1.7ms)
+Completed 200 OK in 53ms (Views: 48.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/new" for ::1 at 2019-06-11 16:09:59 +0530
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (6.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  Rendered shared/_header.html.erb (1.4ms)
+Completed 200 OK in 63ms (Views: 54.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/login" for ::1 at 2019-06-11 16:10:09 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"shokJFfqh5W2Wt9VHHcUw5v8i0R35qhE1CrW+O9FskBTKVwC3ztQ4wv7wfwCd0UGl0TL5y1qJTFxsMNDWW9K7A==", "session"=>{"email"=>"kknmalar3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kknmalar3@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:28
+  [1m[36mUser Update (1.8ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", "$2a$10$JwrsoJEwavzJ/bMqOVcp9uH/62Anwd8ojG/ebFK/qcXCxsE9hNH9G"], ["updated_at", "2019-06-11 10:40:09.307248"], ["id", 3]]
+  ↳ app/models/user.rb:28
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:28
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 167ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/users/3" for ::1 at 2019-06-11 16:10:09 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  Rendered shared/_header.html.erb (3.1ms)
+Completed 200 OK in 48ms (Views: 44.1ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-06-11 16:10:13 +0530
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tmDxeLEWQNrXuOJA0m8Jr6MU5z2du09PmhLR+upxoB5XU4leOceXrGoZ/OnMb1hqr6ynnsc3wjo/iMRBXFtYsg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", nil], ["updated_at", "2019-06-11 10:40:13.474379"], ["id", 3]]
+  ↳ app/models/user.rb:39
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:39
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 2.8ms)
+
+
+  
+NoMethodError (undefined method `forget' for nil:NilClass):
+  
+app/helpers/sessions_helper.rb:35:in `forget'
+app/helpers/sessions_helper.rb:42:in `log_out'
+app/controllers/sessions_controller.rb:19:in `destroy'
+Started PUT "/__web_console/repl_sessions/bce37715c42fea0b4a9df78b6d7986f2" for ::1 at 2019-06-11 16:10:21 +0530
+Started PUT "/__web_console/repl_sessions/bce37715c42fea0b4a9df78b6d7986f2" for ::1 at 2019-06-11 16:10:22 +0530
+Started DELETE "/logout" for ::1 at 2019-06-11 16:22:02 +0530
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tmDxeLEWQNrXuOJA0m8Jr6MU5z2du09PmhLR+upxoB5XU4leOceXrGoZ/OnMb1hqr6ynnsc3wjo/iMRBXFtYsg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:39
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:39
+Redirected to http://localhost:3000/
+Completed 302 Found in 24ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2019-06-11 16:22:02 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+  Rendered shared/_header.html.erb (0.4ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-06-11 16:22:10 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"anPZYF0LK1mBtk/qYZITb4+kEjiP0hF+0lib3PVtOpGLQKFG1dr8LzwXUUN/kkKqgxxSm9VenAt3wo5nQ0fCPQ==", "session"=>{"email"=>"kknmalar3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kknmalar3@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:39
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:39
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 86ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3" for ::1 at 2019-06-11 16:22:10 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  Rendered shared/_header.html.erb (1.7ms)
+Completed 200 OK in 38ms (Views: 33.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-06-11 16:22:12 +0530
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xSkTnRIU2/cOPgVRvWyGzUZrNKyEj0m9aOg1hpQ5NI8kGmu7msUMgbOfG/ijbNcIStN0D94DxMjNciA9IhPMIw=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:39
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-06-11 16:22:12 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+  Rendered shared/_header.html.erb (0.5ms)
+Completed 200 OK in 50ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-06-11 16:22:25 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MyyzTibRYi+vhOCPHF2vjzg+UEfAKIPyqNFBbpww6qbSH8torgC1WRIl/iYCXf5KNIYQ5JqkDocNS1TVKhoSCg==", "session"=>{"email"=>"kknmalar3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kknmalar3@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:28
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", "$2a$10$AQMPrUXaSXO6WjHO/zoR3upGrnJ4S4Ns7eOcKHWTaPVY40gBZvAMm"], ["updated_at", "2019-06-11 10:52:25.951255"], ["id", 3]]
+  ↳ app/models/user.rb:28
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:28
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 169ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/users/3" for ::1 at 2019-06-11 16:22:25 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  Rendered shared/_header.html.erb (1.8ms)
+Completed 200 OK in 40ms (Views: 36.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-06-11 16:22:28 +0530
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zFkw2ngAJDpkUXM18jaMiPxCHJ7yjHHtmzVsPcQBgmgtakj88NHzTNnwbZzsNt1N8PpcPagA/Jg+r3mGcit6xA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", nil], ["updated_at", "2019-06-11 10:52:28.851449"], ["id", 3]]
+  ↳ app/models/user.rb:39
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:39
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2019-06-11 16:22:28 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  Rendered shared/_header.html.erb (1.0ms)
+Completed 200 OK in 47ms (Views: 45.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-06-11 16:22:33 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RLmDWNFTBxuxzGBb0Tcc6W+AmlB2nXe5coI+zp1rfIKlivt+WYLQbQxtfvLPN00sYzja8ywR+szXGCt1K0GELg==", "session"=>{"email"=>"kknmalar3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kknmalar3@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+  Rendered shared/_header.html.erb (0.5ms)
+Completed 200 OK in 140ms (Views: 54.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2019-06-11 16:22:38 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+  Rendered shared/_header.html.erb (0.5ms)
+Completed 200 OK in 57ms (Views: 53.5ms | ActiveRecord: 0.0ms)
+
+
