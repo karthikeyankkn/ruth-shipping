@@ -1,0 +1,11 @@
+<div class="container mt-100">
+  <h2 class="text-center">Forgot password</h2>
+  <div class="row justify-content-center">
+    <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %> 
+  </div>
+</div>
