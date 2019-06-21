@@ -1,0 +1,31 @@
+<div class="container">
+  <h2 class="text-center">All Leads</h2>           
+  <table class="table table-striped">
+    <thead>
+      <tr>
+      	<th>Id</th>
+        <th>Name</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Category</th>
+        <th>City</th>
+        <th>Posted</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    	<% @lead.each do |lead| %>
+	      <tr>
+	      	<td><%= lead.id %></td>
+	        <td><%= lead.name %></td>
+	        <td><%= lead.phone_number %></td>
+	        <td><%= lead.email %></td>
+	        <td><%= lead.category %></td>
+	        <td><%= time_ago_in_words(lead.created_at) %> ago.</td>
+	        <td><%= lead.city %></td>
+	        <td></td>
+	      </tr>
+	    <% end %>
+    </tbody>
+  </table>
+</div>

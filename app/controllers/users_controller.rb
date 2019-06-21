@@ -14,6 +14,7 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
+    @leads = @user.leads
     # redirect_to root_url and return unless FILL_IN
   end
 
@@ -57,15 +58,6 @@ class UsersController < ApplicationController
     end
 
     # Before filters
-
-    # Confirms a logged-in user.
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
-    end
 
     # Confirms the correct user.
     def correct_user
