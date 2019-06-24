@@ -1,24 +1,29 @@
-<div class="col-6">
-	<%= form_for(@lead) do |f| %>
-	  <%= render 'shared/error_messages', object: f.object %>
+<div class="container">
+	<div class="row mt-20">
+		<div class="col-3"></div>
+		<div class="col-6">
+			<%= form_for @lead do |f| %>
+			  <%= render 'shared/error_messages', object: f.object %>
 
-	  <div class="form-group">
-	    <%= f.text_field :name, placeholder: "Enter name", class:"form-control" %>
-	  </div>
-	  <div class="form-group">
-	    <%= f.email_field :email, placeholder: "Enter email", class:"form-control" %>
-	  </div>
-	  <div class="form-group">
-	    <%= f.number_field :phone_number, placeholder: "Enter phone_number", class:"form-control" %>
-	  </div>
+			  <div class="form-group">
+			    <%= f.text_field :name, placeholder: "Enter name", class:"form-control" %>
+			  </div>
+			  <div class="form-group">
+			    <%= f.email_field :email, placeholder: "Enter email", class:"form-control" %>
+			  </div>
+			  <div class="form-group">
+			    <%= f.number_field :phone_number, placeholder: "Enter phone_number", class:"form-control" %>
+			  </div>
 
-	  <div class="form-group">
-	    <%= f.select :city, options_for_select(["Arts and Entertainment","Automotive", "Beauty and Fitness", "Books and Literature", "Business and Industrial Markets", "Computers and Electronics", "Finance", "Food and Drink", "Games", "Healthcare", "Hobbies and Leisure", "Home and Garden", "Internet and Telecom", "Jobs and Education", "Law and Government", "News", "Online Communities", "People and Society", "Pets and Animals", "Property", "Reference", "Science", "Shopping", "Sports", "Travel", "Other"], :selected => f.object.city) %>
-	  </div>
-	  <div class="form-group">
-	    <%= f.select :category, options_for_select(["Nagpur", "Visakhapatnam", "Kanpur", "Pune", "Hyderabad", "Kolkata", "Mumbai", "Delhi", "Virudhunagar", "Viluppuram", "Vellore", "Tiruvannamalai", "Tiruppur", "Tirunelveli", "Tiruchirappalli", "Thoothukkudi", "Thiruvarur", "Thiruvallur", "The Nilgiris", "Theni", "Thanjavur", "Sivaganga", "Salem", "Ramanathapuram", "Pudukkottai", "Perambalur", "Namakkal", "Nagapattinam", "Madurai", "Krishnagiri", "Karur", "Kanyakumari", "Kanchipuram", "Erode", "Dindigul", "Dharmapuri", "Cuddalore", "Coimbatore", "Chennai", "Ariyalur"], :selected => f.object.category) %>
-	  </div>
+			  <div class="form-group">
+			    <%= f.select :category, options_for_select(["Arts and Entertainment","Automotive", "Beauty and Fitness", "Books and Literature", "Business and Industrial Markets", "Computers and Electronics", "Finance", "Food and Drink", "Games", "Healthcare", "Hobbies and Leisure", "Home and Garden", "Internet and Telecom", "Jobs and Education", "Law and Government", "News", "Online Communities", "People and Society", "Pets and Animals", "Property", "Reference", "Science", "Shopping", "Sports", "Travel", "Other"], :selected => f.object.category) %>
+			  </div>
+			  <div class="form-group">
+			    <%= f.select :city, options_for_select(["Nagpur", "Visakhapatnam", "Kanpur", "Pune", "Hyderabad", "Kolkata", "Mumbai", "Delhi", "Virudhunagar", "Viluppuram", "Vellore", "Tiruvannamalai", "Tiruppur", "Tirunelveli", "Tiruchirappalli", "Thoothukkudi", "Thiruvarur", "Thiruvallur", "The Nilgiris", "Theni", "Thanjavur", "Sivaganga", "Salem", "Ramanathapuram", "Pudukkottai", "Perambalur", "Namakkal", "Nagapattinam", "Madurai", "Krishnagiri", "Karur", "Kanyakumari", "Kanchipuram", "Erode", "Dindigul", "Dharmapuri", "Cuddalore", "Coimbatore", "Chennai", "Ariyalur", "Coimbatore"], :selected => f.object.city) %>
+			  </div>
 
-	  <%= f.submit "Post", class: "btn btn-primary" %>
-	<% end %>
+			  <%= f.submit "Post", class: "btn btn-primary" %>
+			<% end %>
+		</div>
+	</div>
 </div>

@@ -18,6 +18,10 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   post '/signup',  to: 'users#create'
   resources :password_resets,     only: [:new, :create, :edit, :update]
+
+  resources :leads do
+    collection { post :import }
+  end
   resources :leads
 
   #dashboard for users
