@@ -34,81 +34,11 @@
         <form name="spydy">
           <div class="row">
             <div class="col-md-5">
-              <select name="category" class="form-control" required>
-                <option selected disabled>Select Category</option>
-                <option value="Arts and Entertainment">Arts and Entertainment</option>
-                <option value="Automotive">Automotive</option>
-                <option value="Beauty and Fitness">Beauty and Fitness</option>
-                <option value="Books and Literature">Books and Literature</option>
-                <option value="Business and Industrial Markets">Business and Industrial Markets</option>
-                <option value="Computers and Electronics">Computers and Electronics</option>
-                <option value="Finance">Finance</option>
-                <option value="Food and Drink">Food and Drink</option>
-                <option value="Games">Games</option>
-                <option value="Healthcare">Healthcare</option>
-                <option value="Hobbies and Leisure">Hobbies and Leisure</option>
-                <option value="Home and Garden">Home and Garden</option>
-                <option value="Internet and Telecom">Internet and Telecom</option>
-                <option value="Jobs and Education">Jobs and Education</option>
-                <option value="Law and Government">Law and Government</option>
-                <option value="News">News</option>
-                <option value="Online Communities">Online Communities</option>
-                <option value="People and Society">People and Society</option>
-                <option value="Pets and Animals">Pets and Animals</option>
-                <option value="Property">Property</option>
-                <option value="Reference">Reference</option>
-                <option value="Science">Science</option>
-                <option value="Shopping">Shopping</option>
-                <option value="Sports">Sports</option>
-                <option value="Travel">Travel</option>
-                <option value="Other">Other</option>
-              </select>
+              <%= select_tag 'category', options_for_select(@leads_category.collect{ |u| [u, u] }) %>
             </div>
             
             <div class="col-md-6">
-              <select name="city" class="form-control" required>
-                <option selected disabled>Select Location</option>
-                <option value="Nagpur">Nagpur</option>
-                <option value="Visakhapatnam">Visakhapatnam</option>
-                <option value="Kanpur">Kanpur</option>
-                <option value="Pune">Pune</option>
-                <option value="Hyderabad">Hyderabad</option>
-                <option value="Kolkata">Kolkata</option>
-                <option value="Mumbai">Mumbai</option>
-                <option value="Delhi">Delhi</option>
-                <option value="Virudhunagar">Virudhunagar</option>
-                <option value="Viluppuram">Viluppuram</option>
-                <option value="Vellore">Vellore</option>
-                <option value="Tiruvannamalai">Tiruvannamalai</option>
-                <option value="Tiruppur">Tiruppur</option>
-                <option value="Tirunelveli">Tirunelveli</option>
-                <option value="Tiruchirappalli">Tiruchirappalli</option>
-                <option value="Thoothukkudi">Thoothukkudi</option>
-                <option value="Thiruvarur">Thiruvarur</option>
-                <option value="Thiruvallur">Thiruvallur</option>
-                <option value="The Nilgiris">The Nilgiris</option>
-                <option value="Theni">Theni</option>
-                <option value="Thanjavur">Thanjavur</option>
-                <option value="Sivaganga">Sivaganga</option>
-                <option value="Salem">Salem</option>
-                <option value="Ramanathapuram">Ramanathapuram</option>
-                <option value="Pudukkottai">Pudukkottai</option>
-                <option value="Perambalur">Perambalur</option>
-                <option value="Namakkal">Namakkal</option>
-                <option value="Nagapattinam">Nagapattinam</option>
-                <option value="Madurai">Madurai</option>
-                <option value="Krishnagiri">Krishnagiri</option>
-                <option value="Karur">Karur</option>
-                <option value="Kanyakumari">Kanyakumari</option>
-                <option value="Kanchipuram">Kanchipuram</option>
-                <option value="Erode">Erode</option>
-                <option value="Dindigul">Dindigul</option>
-                <option value="Dharmapuri">Dharmapuri</option>
-                <option value="Cuddalore">Cuddalore</option>
-                <option value="Chennai">Chennai</option>
-                <option value="Ariyalur">Ariyalur</option>
-                <option value="Coimbatore">Coimbatore</option>
-              </select>
+              <%= select_tag 'city', options_for_select(@leads_city.collect{ |u| [u, u] }) %>
             </div>
             <div class="col-md-1">
               <%= link_to "", leads_path, class:"fas fa-sync btn btn-danger" %>
@@ -146,57 +76,53 @@
 <!-- show all the leads -->
 <style type="text/css">
   .list-lead-container{
-    
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;
+  }
+  .list-lead-container a{
+    padding: 10px;
+    font-size: 24px;
+    /*border-left: 1px solid lightgray;*/
   }
 </style>
 <div class="container">
-  <div class="row">
-    <div class="col-12">
-      <div class="list-lead-container">
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<div class="container-fluid mt-20">
-  <h2 class="text-center mb-20">All Leads<b class="text-info">[<%= @leads.all.count %>]</b></h2>           
-  <table class="table table-striped">
-    <thead>
-      <tr>
-      	<th>Id</th>
-        <th>Name</th>
-        <th>Phone Number</th>
-        <th>Email</th>
-        <th>Category</th>
-        <th>City</th>
-        <th>Posted</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-    	<% @leads.each do |lead| %>
-	      <tr>
-	      	<td><%= lead.id %></td>
-	        <td><%= lead.name %></td>
-	        <td><%= lead.phone_number %></td>
-	        <td><%= lead.email %></td>
-	        <td><%= lead.category %></td>
-          <td><%= lead.city %></td>
-	        <td><%= time_ago_in_words(lead.created_at) %> ago.</td>
-	        <td>
-           <div class="col-md-3">
+  <h2 class="text-center mb-20">All Leads<b class="text-info">[<%= @leads.all.count %>]</b></h2> 
+  <% @leads.each do |lead| %>
+    <div class="row">
+      <div class="col-12">
+        <div class="list-lead-container row">
+          <div class="col-md-3">
+            <label><%= lead.name %></label>
+          </div>
+          <div class="col-md-3">
+            <label><%= lead.phone_number %></label>
+          </div>
+          <div class="col-md-3">
+            <label><%= lead.category %></label>
+          </div>
+          <div class="col-md-3">
+            <label><%= lead.city %></label>
+          </div>
+          <div class="col-md-3">
+            <label><%= lead.created_at.strftime("%d-%m-%Y") %></label>
+          </div>
+          <div class="col-md-3">
+            <label><p class="text-secondary">( <%= time_ago_in_words(lead.created_at) %> ago )</p></label>
+          </div>
+          <div class="col-md-3">
+            <a href="https://api.whatsapp.com/send?phone=91<%= lead.phone_number %>" class="text-success fab fa-whatsapp"></a>
+          </div>
+          <div class="col-md-3 text-right">
             <%= link_to "", lead_path(lead.id), class:"fas fa-binoculars text-info lead-action" %>
             <%= link_to "", edit_lead_path(lead.id), class:"far fa-edit text-warning lead-action" %>
-              <%= link_to "", lead_path(lead.id), method: :delete, data:{confirm: "Are you sure you want to delete"}, class:"far fa-trash-alt text-danger lead-action" %>        
-          </div> 
-          </td>
-	      </tr>
-	    <% end %>
-    </tbody>
-  </table>
+            <%= link_to "", lead_path(lead.id), method: :delete, data:{confirm: "Are you sure you want to delete"}, class:"far fa-trash-alt text-danger lead-action" %>
+          </div>
+        </div>
+      </div>
+    </div> 
+  <% end %>
 </div>
 
 <script type="text/javascript">

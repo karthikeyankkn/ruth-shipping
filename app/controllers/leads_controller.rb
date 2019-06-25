@@ -1,5 +1,5 @@
 class LeadsController < ApplicationController
-	before_action :logged_in_user, only: [:create, :destroy]
+	before_action :logged_in_user, only: [:create, :destroy, :show]
   include HTTParty
 
 def new
@@ -9,6 +9,11 @@ end
 def index
   # @lead = current_user.leads
 
+  # pluck city and category
+  @leads_category = current_user.leads.distinct.pluck(:category)
+  @leads_city = current_user.leads.distinct.pluck(:city)
+
+  # post sms
   @result = []
     if params[:category] && params[:city] && params[:message]
       @spydy_sms = current_user.leads.where({:category => params[:category], :city => params[:city]}).pluck(:phone_number)
@@ -44,8 +49,22 @@ def import
   redirect_to leads_path
 end
 
+def show  
+  @lead = current_user.leads.find(params[:id])
+end
+
 def edit
    @lead = Lead.find(params[:id])
+end
+
+def update
+  @lead = current_user.leads.build(lead_params)
+  if @lead.save
+    flash[:success] = " Lead updates"
+    redirect_to leads_url
+  else
+    render 'edit'
+  end
 end
 
 def destroy

@@ -1,0 +1,38 @@
+<div class="jumbotron text-center">
+  <h1><%= @lead.name %></h1>
+  <p class="text-secondary">( <%= time_ago_in_words(@lead.created_at) %> ago )</p> 
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-3 text-dark">
+      <h3>ID</h3>
+      <p class="text-secondary"><%= @lead.id %></p>
+    </div>
+    <div class="col-3 text-dark">
+      <h3>Phone Number</h3>
+      <p class="text-secondary"><%= @lead.phone_number %></p>
+    </div>
+    <div class="col-3 text-dark">
+      <h3>Email</h3> 
+      <p class="text-secondary"><%= @lead.email %></p>
+    </div>
+    <div class="col-3 text-dark">
+      <h3>Category</h3>
+      <p class="text-secondary"><%= @lead.category %></p>
+    </div>
+    <hr>
+    <div class="col-3 text-dark">
+      <h3>City</h3>
+      <p class="text-secondary"><%= @lead.city %></p>
+    </div>
+    <div class="col-3 text-dark">
+      <h3>User ID</h3>
+      <p class="text-secondary"><%= @lead.user_id %></p>
+    </div>
+    <div class="col-3 text-dark">
+      <h3>Created at</h3>
+      <p class="text-secondary"><%= @lead.created_at.strftime("%d-%m-%Y") %></p>
+    </div>
+  </div>
+</div>

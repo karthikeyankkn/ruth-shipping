@@ -1,6 +1,7 @@
 class Lead < ApplicationRecord
   require 'csv'
   belongs_to :user
+  before_save   :downcase_data
   default_scope -> { order(created_at: :desc) }
 
   def self.import(file)
@@ -15,6 +16,7 @@ class Lead < ApplicationRecord
   end
   
   # validation for leads
+  validates :category, presence: true
   validates :user_id, presence: true
   validates :phone_number,
   					:presence => true, 
@@ -25,4 +27,12 @@ class Lead < ApplicationRecord
   validates :email, presence: true,
 			length: {maximum: 150},
 			format: {with: VALID_EMAIL_REGEX}
+
+  private
+
+  def downcase_data
+    self.email = email.downcase
+    self.category = category.downcase
+    self.city = city.downcase
+  end
 end
