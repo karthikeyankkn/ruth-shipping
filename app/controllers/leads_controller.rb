@@ -55,6 +55,11 @@ def destroy
   redirect_to leads_path
 end
 
+# download sample csv file
+def download_sample_leads_csv
+  send_file "#{Rails.root}/app/assets/documents/spydy-sample-lead-upload-csv.csv", type: "application/csv", x_sendfile: true
+end
+
 private
 
   def lead_params

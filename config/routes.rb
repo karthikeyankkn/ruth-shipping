@@ -19,10 +19,13 @@ Rails.application.routes.draw do
   post '/signup',  to: 'users#create'
   resources :password_resets,     only: [:new, :create, :edit, :update]
 
+  # leads routes
   resources :leads do
     collection { post :import }
   end
   resources :leads
+  get 'download_sample_leads_csv', to: "leads#download_sample_leads_csv", as: 'download_sample_leads_csv'
+
 
   #dashboard for users
   get 'dashboards/show_user_dashboard', as: "show_user_dashboard"
