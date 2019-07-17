@@ -26,9 +26,19 @@
                 <%= link_to "Show users", users_path, :class => 'dropdown-item' %>
               </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">WEBSITE</a>
-            </li> 
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#" landing_pages_url>Landing Page</a>
+            </li>  -->
+            <li class="nav-item dropdown my-2 my-lg-0 float-right">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Landing Page
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <!-- <a class="dropdown-item" href="#">Action</a> -->
+                <%= link_to "Create Landing Page", new_landing_page_path, :class => 'dropdown-item' %>
+                <%= link_to "Show Landing Page", landing_pages_path, :class => 'dropdown-item' %>
+              </div>
+            </li>
             <li class="nav-item dropdown my-2 my-lg-0 float-right">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Settings

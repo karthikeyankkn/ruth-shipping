@@ -1,0 +1,48 @@
+
+
+
+
+
+<!-- show all the leads -->
+<style type="text/css">
+  .list-lead-container{
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;
+  }
+  .list-lead-container a{
+    padding: 10px;
+    font-size: 24px;
+    /*border-left: 1px solid lightgray;*/
+  }
+</style>
+<div class="container">
+  <h2 class="text-center mb-20">All Landing Pages<b class="text-info">[<%= @landing_pages.all.count %>]</b></h2> 
+  <% @landing_pages.each do |landing_page| %>
+    <div class="row">
+      <div class="col-12">
+        <div class="list-lead-container row">
+          <div class="col-md-3">
+            <label><%= landing_page.name %></label>
+          </div>
+          <div class="col-md-3">
+            <label><%= landing_page.phone_number %></label>
+          </div>
+          
+          <div class="col-md-3">
+            <label><%= landing_page.created_at.strftime("%d-%m-%Y") %></label>
+          </div>
+          <div class="col-md-3">
+            <label><p class="text-secondary">( <%= time_ago_in_words(landing_page.created_at) %> ago )</p></label>
+          </div>
+       		<div class="col-md-3 text-right">
+            <%= link_to "", landing_page_path(landing_page.id), class:"fas fa-binoculars text-info lead-action" %>
+            <%= link_to "", edit_landing_page_path(landing_page.id), class:"far fa-edit text-warning lead-action" %>
+            <%= link_to "", landing_page_path(landing_page.id), method: :delete, data:{confirm: "Are you sure you want to delete"}, class:"far fa-trash-alt text-danger lead-action" %>
+          </div>
+        </div>
+      </div>
+    </div> 
+  <% end %>
+</div>

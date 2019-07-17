@@ -29,4 +29,7 @@ Rails.application.routes.draw do
 
   #dashboard for users
   get 'dashboards/show_user_dashboard', as: "show_user_dashboard"
+
+  # landing_page routes
+  resources :landing_pages
 end
