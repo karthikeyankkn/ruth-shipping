@@ -1,233 +1,240 @@
-<div class="jumbotron text-center">
+<div class="container mt-100">
+  <!-- logo and title -->
   <div class="row">
-    <div class="col-3 text-dark">
+    <div class="col-1 text-dark">
       <p class="text-secondary">
         <img src="<%= @landing_page.logo.url %>" width="100" height="100">
       </p>
     </div>
-    <div class="col-9 text-dark text-left">
+    <div class="col-11 text-dark text-center">
       <h1><%= @landing_page.name %></h1>
       <p class="text-secondary">( <%= time_ago_in_words(@landing_page.created_at) %> ago )</p>
-      <p><%= @landing_page.custom_url %></p>
     </div>
   </div>
-   
-  <div class="col-12 text-dark">
-    <p class="text-secondary">
-      <img src="<%= @landing_page.banner_image.url %>" width="100%">
-    </p>
-  </div>
-</div>
-
-<div class="container">
+  <!-- banner -->
   <div class="row">
-    <div class="col-3 text-dark">
-      <h3>ID</h3>
-      <p class="text-secondary"><%= @landing_page.id %></p>
+    <div class="col-12">
+      <img src="<%= @landing_page.banner_image.url %>" width="100%">
     </div>
-    <div class="col-3 text-dark">
-      <h3>Phone Number</h3>
-      <p class="text-secondary"><%= @landing_page.phone_number %></p>
-    </div>
-    <div class="col-3 text-dark">
-      <h3>Email</h3> 
-      <p class="text-secondary"><%= @landing_page.email %></p>
-    </div>
-    <div class="col-3 text-dark">
-      <h3>User ID</h3>
-      <p class="text-secondary"><%= @landing_page.user_id %></p>
-    </div>
-    <div class="col-3 text-dark">
-      <h3>Created at</h3>
-      <p class="text-secondary"><%= @landing_page.created_at.strftime("%d-%m-%Y") %></p>
-    </div>
-    <div class="col-3 text-dark">
-      <h3>Query</h3>
-      <p class="text-secondary"><%= @landing_page.query %></p>
-    </div>
-    <div class="col-3 text-dark">
+  </div>
+  <!-- about description and form -->
+  <div class="row">
+    <div class="col-9">
       <h3>Additional Description</h3>
-      <p class="text-secondary"><%= @landing_page.about_description %></p>
+      <p><%= @landing_page.about_description %></p>
     </div>
-    <div class="col-6 text-dark">
-      <h3>Seciton 1 image</h3>
-      <p class="text-secondary">
-        <img src="<%= @landing_page.section_1_image.url %>" width="300" height="300">
-      </p>
+    <div class="col-3 bg-light">
+      <h2>Contact</h2>
+      <form action="">
+        <div class="form-group">
+          <label for="uname">Name:</label>
+          <input type="text" class="form-control" id="uname" placeholder="Enter name" name="uname" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="form-group">
+          <label for="uname">Phone Number:</label>
+          <input type="text" class="form-control" id="uname" placeholder="Enter phone_number" name="uname" required>
+        </div>
+        <div class="form-group">
+          <label for="uname">Email:</label>
+          <input type="text" class="form-control" id="uname" placeholder="Enter email" name="uname" required>
+        </div>
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
     </div>
-    <div class="col-6 text-dark">
-      <h3>Section 1 content</h3>
+  </div>
+  <hr class="bg-dark divider">
+  <!-- section 1 -->
+  <div class="row mt-20">
+    <div class="col-6">
+      <img src="<%= @landing_page.section_1_image.url %>" width="300" height="300">
+    </div>
+    <div class="col-6">
       <p class="text-secondary"><%= @landing_page.section_1_content %></p>
     </div>
-    <hr style="width: 100%; background: red">
-    <div class="col-6 text-dark">
-      <h3>Section 2 content</h3>
+  </div>
+  <!-- section 2 -->
+  <div class="row mt-20">
+    <div class="col-6">
       <p class="text-secondary"><%= @landing_page.section_2_content %></p>
     </div>
     <div class="col-6 text-dark">
-      <h3>Seciton 2 image</h3>
       <p class="text-secondary">
         <img src="<%= @landing_page.section_2_image.url %>" width="300" height="300">
       </p>
     </div>
-    <hr style="width: 100%; background: red">
-    <!-- video section -->
-    <div class="col-12 text-dark">
-      <h3>video</h3>
+  </div>
+  <hr class="bg-dark divider">
+  <!-- video -->
+  <div class="row">
+    <div class="col-12">
       <video width="100%" height="350" controls>
         <source src="<%= @landing_page.video_url %>" type="video/mp4">
         <!-- <source src="movie.ogg" type="video/ogg"> -->
         Your browser does not support the video tag.
       </video>
     </div>
-    <hr style="width: 100%; background: red">
-    <!-- section 2 -->
-    <h3>Section 3</h3>
-    <div class="row">
-      <div class="col-4">
-        <div class="card">
-          <img class="card-img-top" src="<%= @landing_page.section_3_icon_1 %>" alt="Card image" style="width:100%">
-          <div class="card-body">
-            <!-- <h4 class="card-title">John Doe</h4> -->
-            <p class="card-text"><%= @landing_page.section_3_description_1 %></p>
-            <!-- <a href="#" class="btn btn-primary">See Profile</a> -->
-          </div>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="card">
-          <img class="card-img-top" src="<%= @landing_page.section_3_icon_1 %>" alt="Card image" style="width:100%">
-          <div class="card-body">
-            <!-- <h4 class="card-title">John Doe</h4> -->
-            <p class="card-text"><%= @landing_page.section_3_description_1 %></p>
-            <!-- <a href="#" class="btn btn-primary">See Profile</a> -->
-          </div>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="card">
-          <img class="card-img-top" src="<%= @landing_page.section_3_icon_1 %>" alt="Card image" style="width:100%">
-          <div class="card-body">
-            <!-- <h4 class="card-title">John Doe</h4> -->
-            <p class="card-text"><%= @landing_page.section_3_description_1 %></p>
-            <!-- <a href="#" class="btn btn-primary">See Profile</a> -->
-          </div>
+  </div>
+  <!-- section 3 -->
+  <div class="row mt-100">
+    <div class="col-12 text-center">
+      <h2>Features</h2>
+    </div>
+    <div class="col-4">
+      <div class="card">
+        <img class="card-img-top" src="<%= @landing_page.section_3_icon_1 %>" alt="Card image" style="width:100px; margin: auto; padding-top: 10px;">
+        <div class="card-body">
+          <!-- <h4 class="card-title">John Doe</h4> -->
+          <p class="card-text"><%= @landing_page.section_3_description_1 %></p>
+          <!-- <a href="#" class="btn btn-primary">See Profile</a> -->
         </div>
       </div>
     </div>
-
-    <hr style="width: 100%; background: red">
-    <!-- gallery section -->
-    <div class="row">
-      <div class="col-3 text-dark">
-        <h3>gallery_img_1</h3>
-        <p class="text-secondary">
-          <img src="<%= @landing_page.gallery_img_1.url %>" width="100%">
-        </p>
-      </div>
-      <div class="col-3 text-dark">
-        <h3>gallery_img_2</h3>
-        <p class="text-secondary">
-          <img src="<%= @landing_page.gallery_img_2.url %>" width="100%">
-        </p>
-      </div>
-       <div class="col-3 text-dark">
-        <h3>gallery_img_3</h3>
-        <p class="text-secondary">
-          <img src="<%= @landing_page.gallery_img_3.url %>" width="100%">
-        </p>
-      </div>
-      <div class="col-3 text-dark">
-        <h3>gallery_img_4</h3>
-        <p class="text-secondary">
-          <img src="<%= @landing_page.gallery_img_4.url %>" width="100%">
-        </p>
-      </div>
-      <div class="col-3 text-dark">
-        <h3>gallery_img_5</h3>
-        <p class="text-secondary">
-          <img src="<%= @landing_page.gallery_img_5.url %>" width="100%">
-        </p>
-      </div>
-      <div class="col-3 text-dark">
-        <h3>gallery_img_6</h3>
-        <p class="text-secondary">
-          <img src="<%= @landing_page.gallery_img_6.url %>" width="100%">
-        </p>
-      </div>
-      <div class="col-3 text-dark">
-        <h3>gallery_img_7</h3>
-        <p class="text-secondary">
-          <img src="<%= @landing_page.gallery_img_7.url %>" width="100%">
-        </p>
-      </div>
-      <div class="col-3 text-dark">
-        <h3>gallery_img_8</h3>
-        <p class="text-secondary">
-          <img src="<%= @landing_page.gallery_img_8.url %>" width="100%">
-        </p>
-      </div>
-      <div class="col-3 text-dark">
-        <h3>gallery_img_9</h3>
-        <p class="text-secondary">
-          <img src="<%= @landing_page.gallery_img_9.url %>" width="100%">
-        </p>
-      </div>
-      <div class="col-3 text-dark">
-        <h3>gallery_img_10</h3>
-        <p class="text-secondary">
-          <img src="<%= @landing_page.gallery_img_10.url %>" width="100%">
-        </p>
+    <div class="col-4">
+      <div class="card">
+        <img class="card-img-top" src="<%= @landing_page.section_3_icon_1 %>" alt="Card image" style="width:100px; margin: auto; padding-top: 10px;">
+        <div class="card-body">
+          <!-- <h4 class="card-title">John Doe</h4> -->
+          <p class="card-text"><%= @landing_page.section_3_description_1 %></p>
+          <!-- <a href="#" class="btn btn-primary">See Profile</a> -->
+        </div>
       </div>
     </div>
-
-    <hr style="width: 100%; background: red">
-    <div class="row">
-      <div class="col-3 text-dark">
-        <h3>our_client_logo_1</h3>
-        <p class="text-secondary">
-          <img src="<%= @landing_page.our_client_logo_1.url %>" width="100%">
-        </p>
-      </div>
-      <div class="col-3 text-dark">
-        <h3>our_client_logo_2</h3>
-        <p class="text-secondary">
-          <img src="<%= @landing_page.our_client_logo_2.url %>" width="100%">
-        </p>
-      </div>
-      <div class="col-3 text-dark">
-        <h3>our_client_logo_3</h3>
-        <p class="text-secondary">
-          <img src="<%= @landing_page.our_client_logo_3.url %>" width="100%">
-        </p>
-      </div>
-      <div class="col-3 text-dark">
-        <h3>our_client_logo_4</h3>
-        <p class="text-secondary">
-          <img src="<%= @landing_page.our_client_logo_4.url %>" width="100%">
-        </p>
-      </div>
-      <div class="col-3 text-dark">
-        <h3>our_client_logo_5</h3>
-        <p class="text-secondary">
-          <img src="<%= @landing_page.our_client_logo_5.url %>" width="100%">
-        </p>
-      </div>
-    </div>
-    <hr style="width: 100%; background: red">
-    <div class="row">
-      <div class="col-6">
-        <blockquote class="blockquote">
-          <p><%= @landing_page.testimonial_content_1%></p>
-          <label class="blockquote-footer"><%= @landing_page.testimonial_1_name%></label>
-        </blockquote>  
-      </div>
-      <div class="col-6">
-        <blockquote class="blockquote">
-          <p><%= @landing_page.testimonial_content_2%></p>
-          <label class="blockquote-footer"><%= @landing_page.testimonial_2_name%></label>
-        </blockquote>  
+    <div class="col-4">
+      <div class="card">
+        <img class="card-img-top" src="<%= @landing_page.section_3_icon_1 %>" alt="Card image" style="width:100px; margin: auto; padding-top: 10px;">
+        <div class="card-body">
+          <!-- <h4 class="card-title">John Doe</h4> -->
+          <p class="card-text"><%= @landing_page.section_3_description_1 %></p>
+          <!-- <a href="#" class="btn btn-primary">See Profile</a> -->
+        </div>
       </div>
     </div>
   </div>
+  <!-- gallery section -->
+  <div class="row">
+    <div class="col-12 mt-100 text-center">
+      <h2>Gallery</h2>
+    </div>
+    <div class="col-3 text-dark">
+      <p class="text-secondary">
+        <img src="<%= @landing_page.gallery_img_1.url %>" width="100%">
+      </p>
+    </div>
+    <div class="col-3 text-dark">
+      <p class="text-secondary">
+        <img src="<%= @landing_page.gallery_img_2.url %>" width="100%">
+      </p>
+    </div>
+     <div class="col-3 text-dark">
+      <p class="text-secondary">
+        <img src="<%= @landing_page.gallery_img_3.url %>" width="100%">
+      </p>
+    </div>
+    <div class="col-3 text-dark">
+      <p class="text-secondary">
+        <img src="<%= @landing_page.gallery_img_4.url %>" width="100%">
+      </p>
+    </div>
+    <div class="col-3 text-dark">
+      <p class="text-secondary">
+        <img src="<%= @landing_page.gallery_img_5.url %>" width="100%">
+      </p>
+    </div>
+    <div class="col-3 text-dark">
+      <p class="text-secondary">
+        <img src="<%= @landing_page.gallery_img_6.url %>" width="100%">
+      </p>
+    </div>
+    <div class="col-3 text-dark">
+      <p class="text-secondary">
+        <img src="<%= @landing_page.gallery_img_7.url %>" width="100%">
+      </p>
+    </div>
+    <div class="col-3 text-dark">
+      <p class="text-secondary">
+        <img src="<%= @landing_page.gallery_img_8.url %>" width="100%">
+      </p>
+    </div>
+    <div class="col-3 text-dark">
+      <p class="text-secondary">
+        <img src="<%= @landing_page.gallery_img_9.url %>" width="100%">
+      </p>
+    </div>
+    <div class="col-3 text-dark">
+      <p class="text-secondary">
+        <img src="<%= @landing_page.gallery_img_10.url %>" width="100%">
+      </p>
+    </div>
+  </div>
+  <!-- cutomer logo -->
+  <div class="row">
+    <div class="col-12 mt-100 text-center">
+      <h2>Customer Logo</h2>
+    </div>
+    <div class="col-4 text-dark">
+      <p class="text-secondary">
+        <img src="<%= @landing_page.our_client_logo_1.url %>" width="100%">
+      </p>
+    </div>
+    <div class="col-4 text-dark">
+      <p class="text-secondary">
+        <img src="<%= @landing_page.our_client_logo_2.url %>" width="100%">
+      </p>
+    </div>
+    <div class="col-4 text-dark">
+      <p class="text-secondary">
+        <img src="<%= @landing_page.our_client_logo_3.url %>" width="100%">
+      </p>
+    </div>
+    <!-- <div class="col-4 text-dark">
+      <p class="text-secondary">
+        <img src="<%= @landing_page.our_client_logo_4.url %>" width="100%">
+      </p>
+    </div>
+    <div class="col-4 text-dark">
+      <p class="text-secondary">
+        <img src="<%= @landing_page.our_client_logo_5.url %>" width="100%">
+      </p>
+    </div> -->
+  </div>
+  <!-- testimonial -->
+  <div class="row">
+    <div class="col-12 mt-100 text-center">
+      <h2>Testimonial</h2>
+    </div>
+    <div class="col-6">
+      <blockquote class="blockquote">
+        <p><%= @landing_page.testimonial_content_1%></p>
+        <label class="blockquote-footer"><%= @landing_page.testimonial_1_name%></label>
+      </blockquote>  
+    </div>
+    <div class="col-6">
+      <blockquote class="blockquote">
+        <p><%= @landing_page.testimonial_content_2%></p>
+        <label class="blockquote-footer"><%= @landing_page.testimonial_2_name%></label>
+      </blockquote>  
+    </div>
+  </div>
+
+  <div class="footer text-center bg-dark">
+    <p class="text-light">&copy Copyright reserved 2019</p>
+  </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

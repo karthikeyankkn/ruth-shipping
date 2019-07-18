@@ -1,163 +1,200 @@
-<div class="container">
-	<div class="row mt-20">
-		<!-- <div class="col-3"></div> -->
-		<div class="col-12">
-			<%= form_for @landing_page do |f| %>
-			  <%= render 'shared/error_messages', object: f.object %>
-
-			  <div class="row">
-			  	<div class="form-group col-3">
-				    <%= f.text_field :name, placeholder: "Enter Title", class:"form-control" %>
-				  </div>
-				  <div class="form-group col-3">
-				    <%= f.text_field :custom_url, placeholder: "Enter Custem Url", class:"form-control" %>
-				  </div>
-			  	<!-- 
-				  <div class="form-group col-3">
-				    <%= f.email_field :email, placeholder: "Enter email", class:"form-control" %>
-				  </div>
-				  <div class="form-group col-3">
-				    <%= f.number_field :phone_number, placeholder: "Enter phone_number", class:"form-control" %>
-				  </div>
-				  <div class="form-group col-3">
-				  	<%= f.text_area :query, class:'form-control', placeholder:'Enter query', rows: 5 %>
-				  </div>
-				   -->
-				  <div class="form-group col-3">
-				  	<label>Logo</label>
-				  	<%= f.file_field :logo%>
-				  </div>
-				  <div class="form-group col-3">
-				  	<label>banner image</label>
-				  	<%= f.file_field :banner_image %>
-				  </div>
-				  
-				  <div class="form-group col-3">
-				  	<%= f.text_area :about_description, class:'form-control', placeholder:'Enter about_description', rows: 5 %>
-				  </div>
-				  <hr style="width: 100%; background: red">
-				  <!-- section 1 code -->
-				  <div class="form-group col-3">
-				  	<label>section_1_image</label>
-				  	<%= f.file_field :section_1_image%>
-				  </div>
-				  <div class="form-group col-3">
-				  	<%= f.text_area :section_1_content, class:'form-control', placeholder:'Enter section_1_content', rows: 5 %>
-				  </div>
-				  <div class="form-group col-3">
-				  	<label>section_2_image</label>
-				  	<%= f.file_field :section_2_image%>
-				  </div>
-				  <div class="form-group col-3">
-				  	<%= f.text_area :section_2_content, class:'form-control', placeholder:'Enter section_2_content', rows: 5 %>
-				  </div>
-
-				  <!-- video section -->
-				  <div class="form-group col-3">
-				  	<label>video_url</label>
-				  	<%= f.file_field :video_url%>
-				  </div>
-
-				  <hr style="width: 100%; background: red">
-
-				  <!-- section 3 code -->
-				  <div class="row">
-				  	<div class="form-group col-4">
-					  	<label>section_3_icon_1</label>
-					  	<%= f.file_field :section_3_icon_1%><br><br>
-					  	<label>section_3_description_1</label>
-					  	<%= f.text_area :section_3_description_1, class:'form-control', placeholder:'Enter section_3_description_1', rows: 5 %>
+<%= form_for @landing_page do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+	<div class="landing-page-form-container" data-spy="scroll" data-target="#myScrollspy" data-offset="1">
+		<div class="container-fluid">
+		  <div class="row">
+		    <nav class="col-sm-2 col-3" id="myScrollspy">
+		      <ul class="nav nav-pills flex-column">
+		        <li class="nav-item">
+		          <a class="nav-link active" href="#basic">Basic Information</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="#section1">Section 1</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="#section2">Section 2</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="#video">Video</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="#section3">Section 3</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="#gallery">Gallery</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="#customer_logo">Customer Logo</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="#testimonial">Testimonial</a>
+		        </li>
+		      </ul>
+		    </nav>
+		    
+		    <!-- content section  -->
+				<div class="col-sm-10 col-9 bg-light">
+		      <div id="basic" class="container-fluid">    
+		        <h1>Basic Information</h1>
+		        <div class="row">
+							<div class="col-4 form-group">
+								<label>Title</label>
+								<%= f.text_field :name, placeholder: "Enter Title", class:"form-control" %>
+							</div>
+							<div class="col-4 form-group">
+								<label>Logo</label><br>
+							  <%= f.file_field :logo%>
+							</div>
+							<div class="col-4 form-group">
+								<label>Custom URL</label>
+								<%= f.text_field :custom_url, placeholder: "Enter Custem Url", class:"form-control" %>
+							</div>
+							<div class="form-group col-4">
+						  	<label>Banner Image</label><br>
+						  	<%= f.file_field :banner_image %>
+						  </div>
+						  <div class="form-group col-8">
+						  	<label>Additional Description</label><br>
+						  	<%= f.text_area :about_description, class:'form-control', placeholder:'Enter about_description', rows: 5 %>
+						  </div>
+						</div>
+		      </div>
+		      <hr class="bg-dark divider">
+		      <div id="section1"> 
+		        <h1>Section 1</h1>
+		        <div class="row">
+		        	<div class="col-6 form-group">
+								<label>Section 1 Image</label><br>
+								<%= f.file_field :section_1_image%>
+							</div>
+							<div class="col-6 form-group">
+								<label>Section 1 Content</label>
+								<%= f.text_area :section_1_content, class:'form-control', placeholder:'Enter section_1_content', rows: 5 %>
+							</div>
+		        </div>
+		      </div>
+		      <hr class="bg-dark divider">
+		      <div id="section2">
+		      	<div class="row">
+		        	<div class="col-6 form-group">
+								<label>Section 2 Image</label><br>
+								<%= f.file_field :section_2_image%>
+							</div>
+							<div class="col-6 form-group">
+								<label>Section 2 Content</label>
+								<%= f.text_area :section_2_content, class:'form-control', placeholder:'Enter section_2_content', rows: 5 %>
+							</div>
+		        </div>
+		      </div>
+		      <hr class="bg-dark divider">
+		      <div id="video"> 
+		        <h1>Video</h1>
+		        <div class="row">
+							<div class="col-12">
+								<%= f.file_field :video_url%>
+							</div>
+						</div>
+		      </div>
+		      <hr class="bg-dark divider">
+		      <div id="section3"> 
+		        <h1>Section 3</h1>
+		        <div class="row">
+					  	<div class="form-group col-4">
+						  	<label>Section 3 Icon 1</label>
+						  	<%= f.file_field :section_3_icon_1%><br><br>
+						  	<label>section_3_description_1</label>
+						  	<%= f.text_area :section_3_description_1, class:'form-control', placeholder:'Enter section_3_description_1', rows: 5 %>
+						  </div>
+						  <div class="form-group col-4">
+						  	<label>Section 3 Icon 2</label>
+						  	<%= f.file_field :section_3_icon_2%><br><br>
+						  	<label>section_3_description_1</label>
+						  	<%= f.text_area :section_3_description_2, class:'form-control', placeholder:'Enter section_3_description_2', rows: 5 %>
+						  </div>
+						  <div class="form-group col-4">
+						  	<label>Section 3 Icon 3</label>
+						  	<%= f.file_field :section_3_icon_3%><br><br>
+						  	<label>section_3_description_3</label>
+						  	<%= f.text_area :section_3_description_3, class:'form-control', placeholder:'Enter section_3_description_3', rows: 5 %>
+						  </div>
 					  </div>
-					  <div class="form-group col-4">
-					  	<label>section_3_icon_2</label>
-					  	<%= f.file_field :section_3_icon_2%><br><br>
-					  	<label>section_3_description_1</label>
-					  	<%= f.text_area :section_3_description_2, class:'form-control', placeholder:'Enter section_3_description_2', rows: 5 %>
+		      </div>
+		      <hr class="bg-dark divider">
+		      <div id="section2"> 
+		        <h1>Gallery</h1>
+		        <div class="row">
+						  <div class="form-group col-3">
+						  	<label>gallery_img_1</label>
+						  	<%= f.file_field :gallery_img_1%>
+						  </div>
+						  <div class="form-group col-3">
+						  	<label>gallery_img_2</label>
+						  	<%= f.file_field :gallery_img_2%>
+						  </div>
+						  <div class="form-group col-3">
+						  	<label>gallery_img_3</label>
+						  	<%= f.file_field :gallery_img_3%>
+						  </div>
+						  <div class="form-group col-3">
+						  	<label>gallery_img_4</label>
+						  	<%= f.file_field :gallery_img_4%>
+						  </div>
+						  <div class="form-group col-3">
+						  	<label>gallery_img_5</label>
+						  	<%= f.file_field :gallery_img_5%>
+						  </div>
+						  <div class="form-group col-3">
+						  	<label>gallery_img_6</label>
+						  	<%= f.file_field :gallery_img_6%>
+						  </div>
+						  <div class="form-group col-3">
+						  	<label>gallery_img_7</label>
+						  	<%= f.file_field :gallery_img_7%>
+						  </div>
+						  <div class="form-group col-3">
+						  	<label>gallery_img_8</label>
+						  	<%= f.file_field :gallery_img_8%>
+						  </div>
+						  <div class="form-group col-3">
+						  	<label>gallery_img_9</label>
+						  	<%= f.file_field :gallery_img_9%>
+						  </div>
+						  <div class="form-group col-3">
+						  	<label>gallery_img_10</label>
+						  	<%= f.file_field :gallery_img_10%>
+						  </div>
 					  </div>
-					  <div class="form-group col-4">
-					  	<label>section_3_icon_3</label>
-					  	<%= f.file_field :section_3_icon_3%><br><br>
-					  	<label>section_3_description_3</label>
-					  	<%= f.text_area :section_3_description_3, class:'form-control', placeholder:'Enter section_3_description_3', rows: 5 %>
+		      </div> 
+		      <hr class="bg-dark divider">
+		      <div id="customer_logo"> 
+		        <h1>Customer Logo</h1>
+		        <div class="row">
+						  <div class="form-group col-3">
+						  	<label>our_client_logo_1</label>
+						  	<%= f.file_field :our_client_logo_1%>
+						  </div>
+						  <div class="form-group col-3">
+						  	<label>our_client_logo_2</label>
+						  	<%= f.file_field :our_client_logo_2%>
+						  </div>
+						  <div class="form-group col-3">
+						  	<label>our_client_logo_3</label>
+						  	<%= f.file_field :our_client_logo_3%>
+						  </div>
+						  <div class="form-group col-3">
+						  	<label>our_client_logo_4</label>
+						  	<%= f.file_field :our_client_logo_4%>
+						  </div>
+						  <div class="form-group col-3">
+						  	<label>our_client_logo_5</label>
+						  	<%= f.file_field :our_client_logo_5%>
+						  </div>
 					  </div>
-				  </div>
-
-				  <hr style="width: 100%; background: red">
-				  <!-- gallery section -->
-				  <h3>Gallery</h3>
-				  <div class="row">
-					  <div class="form-group col-3">
-					  	<label>gallery_img_1</label>
-					  	<%= f.file_field :gallery_img_1%>
-					  </div>
-					  <div class="form-group col-3">
-					  	<label>gallery_img_2</label>
-					  	<%= f.file_field :gallery_img_2%>
-					  </div>
-					  <div class="form-group col-3">
-					  	<label>gallery_img_3</label>
-					  	<%= f.file_field :gallery_img_3%>
-					  </div>
-					  <div class="form-group col-3">
-					  	<label>gallery_img_4</label>
-					  	<%= f.file_field :gallery_img_4%>
-					  </div>
-					  <div class="form-group col-3">
-					  	<label>gallery_img_5</label>
-					  	<%= f.file_field :gallery_img_5%>
-					  </div>
-					  <div class="form-group col-3">
-					  	<label>gallery_img_6</label>
-					  	<%= f.file_field :gallery_img_6%>
-					  </div>
-					  <div class="form-group col-3">
-					  	<label>gallery_img_7</label>
-					  	<%= f.file_field :gallery_img_7%>
-					  </div>
-					  <div class="form-group col-3">
-					  	<label>gallery_img_8</label>
-					  	<%= f.file_field :gallery_img_8%>
-					  </div>
-					  <div class="form-group col-3">
-					  	<label>gallery_img_9</label>
-					  	<%= f.file_field :gallery_img_9%>
-					  </div>
-					  <div class="form-group col-3">
-					  	<label>gallery_img_10</label>
-					  	<%= f.file_field :gallery_img_10%>
-					  </div>
-				  </div>
-				  <hr style="width: 100%; background: red">
-				  <!-- client logo section-->
-				  <h3>Client Logo</h3>
-				  <div class="row">
-					  <div class="form-group col-3">
-					  	<label>our_client_logo_1</label>
-					  	<%= f.file_field :our_client_logo_1%>
-					  </div>
-					  <div class="form-group col-3">
-					  	<label>our_client_logo_2</label>
-					  	<%= f.file_field :our_client_logo_2%>
-					  </div>
-					  <div class="form-group col-3">
-					  	<label>our_client_logo_3</label>
-					  	<%= f.file_field :our_client_logo_3%>
-					  </div>
-					  <div class="form-group col-3">
-					  	<label>our_client_logo_4</label>
-					  	<%= f.file_field :our_client_logo_4%>
-					  </div>
-					  <div class="form-group col-3">
-					  	<label>our_client_logo_5</label>
-					  	<%= f.file_field :our_client_logo_5%>
-					  </div>
-				  </div>
-				  <hr style="width: 100%; background: red">
-				  <!-- testimonial section -->
-				  
-				  <h3>Testimonial</h3>
-				  <div class="container-fluid">
-				  	<div class="row">
+		      </div> 
+		      <hr class="bg-dark divider">
+		      <div id="testimonial"> 
+		        <h1>Testimonial</h1>
+		        <div class="row">
 					  	<div class="col-6">
 					  		<div class="form-group">
 						  		<%= f.text_field :testimonial_1_name, placeholder: "Enter testimonial_1_name", class:"form-control" %><br>
@@ -171,14 +208,33 @@
 							  </div>
 						  </div>
 					  </div>
-				  </div>
-				  
-
-
-
-			  </div>
-			  <%= f.submit "Post", class: "btn btn-primary" %>
-			<% end %>
+		      </div> 
+		      <div class="row text-center">
+		      	<div class="col-12">
+		      		<%= f.submit "Post", class: "btn btn-primary" %>
+		      	</div>
+			    </div>       
+		    </div>
+		  </div>
 		</div>
 	</div>
-</div>
+<% end %>
+
+<style>
+  .landing-page-form-container {
+    position: relative;
+    overflow: hidden;
+  }
+  ul.nav-pills {
+    top: 100px;
+    position: fixed;
+  }
+  div.col-8 div {
+    /*height: 1500px;*/
+  }
+  label{
+  	color: #E91E63;
+  	text-transform: uppercase;
+  	margin: 10px 0 20px 0;
+  }
+  </style>
