@@ -8,6 +8,7 @@
     <div class="col-9 text-dark text-left">
       <h1><%= @landing_page.name %></h1>
       <p class="text-secondary">( <%= time_ago_in_words(@landing_page.created_at) %> ago )</p>
+      <p><%= @landing_page.custom_url %></p>
     </div>
   </div>
    

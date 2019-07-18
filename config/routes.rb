@@ -32,4 +32,6 @@ Rails.application.routes.draw do
 
   # landing_page routes
   resources :landing_pages
+  # get 'landing_pages/:id', to: 'landing_pages#render_page'
+  get '/landing_page',  to: 'landing_pages#render_page'
 end

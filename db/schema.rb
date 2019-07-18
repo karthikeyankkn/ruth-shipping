@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_17_103746) do
+ActiveRecord::Schema.define(version: 2019_07_18_072714) do
 
   create_table "landing_pages", force: :cascade do |t|
     t.string "name"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2019_07_17_103746) do
     t.string "section_3_description_1"
     t.string "section_3_description_2"
     t.string "section_3_description_3"
+    t.string "custom_url"
   end
 
   create_table "leads", force: :cascade do |t|
