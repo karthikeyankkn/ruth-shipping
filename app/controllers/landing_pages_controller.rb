@@ -81,38 +81,62 @@ class LandingPagesController < ApplicationController
   			"section_2_image": @landing_page.section_2_image.url,
   			"section_2_content": @landing_page.section_2_content
   		},
-  		"section_3": @section_3 = {
-  			"section_3_icon_1": @landing_page.section_3_icon_1.url,
-  			"section_3_icon_2": @landing_page.section_3_icon_2.url,
-  			"section_3_icon_3": @landing_page.section_3_icon_3.url,
-  			"section_3_description_1": @landing_page.section_3_description_1,
-  			"section_3_description_2": @landing_page.section_3_description_2,
-  			"section_3_description_3": @landing_page.section_3_description_3
+  		"section_3": @section_3 = [{"section_3_icon": @landing_page.section_3_icon_1.url,
+  			"section_3_description": @landing_page.section_3_description_1},
+  			{"section_3_icon": @landing_page.section_3_icon_2.url,
+  			"section_3_description": @landing_page.section_3_description_2},
+  			{"section_3_icon": @landing_page.section_3_icon_3.url,
+  			"section_3_description": @landing_page.section_3_description_3}
+  		],
+  		"video_url": @landing_page.video_url.url,
+  		"gallery": @gallery = [{
+  			"gallery_img": @landing_page.gallery_img_1.url
   		},
-  		"gallery": @gallery = {
-  			"gallery_img_1": @landing_page.gallery_img_1.url,
-  			"gallery_img_2": @landing_page.gallery_img_2.url,
-  			"gallery_img_3": @landing_page.gallery_img_3.url,
-  			"gallery_img_4": @landing_page.gallery_img_4.url,
-  			"gallery_img_5": @landing_page.gallery_img_5.url,
-  			"gallery_img_6": @landing_page.gallery_img_6.url,
-  			"gallery_img_7": @landing_page.gallery_img_7.url,
-  			"gallery_img_8": @landing_page.gallery_img_8.url,
-  			"gallery_img_9": @landing_page.gallery_img_9.url,
-  			"gallery_img_10": @landing_page.gallery_img_10.url
+  		{
+  			"gallery_img": @landing_page.gallery_img_2.url
   		},
-  		"our_client_logo": @our_client_logo = {
-  			"our_client_logo_1": @landing_page.our_client_logo_1.url,
-  			"our_client_logo_2": @landing_page.our_client_logo_2.url,
-  			"our_client_logo_3": @landing_page.our_client_logo_3.url,
-  			"our_client_logo_4": @landing_page.our_client_logo_4.url,
-  			"our_client_logo_5": @landing_page.our_client_logo_5.url
+  		{
+  			"gallery_img": @landing_page.gallery_img_3.url
   		},
-			"testimonial_1_name": @landing_page.testimonial_1_name,
-			"testimonial_content_1": @landing_page.testimonial_content_1,
-			"testimonial_2_name": @landing_page.testimonial_2_name,
-			"testimonial_content_2": @landing_page.testimonial_content_2
-
+  		{
+  			"gallery_img": @landing_page.gallery_img_4.url
+  		},
+  		{
+  			"gallery_img": @landing_page.gallery_img_5.url
+  		},
+  		{
+  			"gallery_img": @landing_page.gallery_img_6.url
+  		}
+  		# {
+  		# 	"gallery_img": @landing_page.gallery_img_7.url
+  		# },
+  		# {
+  		# 	"gallery_img": @landing_page.gallery_img_8.url
+  		# },
+  		# {
+  		# 	"gallery_img": @landing_page.gallery_img_9.url
+  		# },
+  		# {
+  		# 	"gallery_img": @landing_page.gallery_img_10.url
+  		# }
+  		],
+  		"our_client_logo": @our_client_logo = [
+  			{"our_client_logo": @landing_page.our_client_logo_1.url},
+  			{"our_client_logo": @landing_page.our_client_logo_2.url},
+  			{"our_client_logo": @landing_page.our_client_logo_3.url},
+  			{"our_client_logo": @landing_page.our_client_logo_4.url}
+  			# "our_client_logo_5": @landing_page.our_client_logo_5.url
+  		],
+  		"testimonial": @testimonial = [{
+  			"testimonial_name": @landing_page.testimonial_1_name,
+  			"testimonial_content": @landing_page.testimonial_content_1
+  		},
+  		{
+  			"testimonial_name": @landing_page.testimonial_2_name,
+  			"testimonial_content": @landing_page.testimonial_content_2
+  		}],
+  		"email": @landing_page.email,
+  		"phone_number": @landing_page.phone_number
   	}
   	render json: ["landing_page_data": @landing_page_data], status: 200
 	end
