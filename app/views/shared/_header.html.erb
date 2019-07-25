@@ -1,33 +1,62 @@
 <header>
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <a class="navbar-brand" href="#">Marketing-Tool</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="/dashboards/show_user_dashboard">SPYDY</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav navbar-right">
-        <% if logged_in? %>
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Menu 1</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="/login">Menu 2</a>
-          </li>
-          <!-- Dropdown -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-              Settings
-            </a>
-            <div class="dropdown-menu">
-              <%= link_to "Log out", logout_path, class: "dropdown-item", method: :delete %>
-            </div>
-          </li>  
-        <% else %>
-            <li class="nav-item">
-              <a class="nav-link" href="/login">Log in</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <% if logged_in? %>
+            <li class="nav-item dropdown my-2 my-lg-0 float-right">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Leads
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <!-- <a class="dropdown-item" href="#">Action</a> -->
+                <%= link_to "Add lead", new_lead_path, :class => 'dropdown-item' %>
+                <%= link_to "Show leads", leads_path, :class => 'dropdown-item' %>
+              </div>
             </li>
-        <% end %> 
-      </ul>
-    </div>  
+            <li class="nav-item dropdown my-2 my-lg-0 float-right">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Users
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to "Show users", users_path, :class => 'dropdown-item' %>
+              </div>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#" landing_pages_url>Landing Page</a>
+            </li>  -->
+            <li class="nav-item dropdown my-2 my-lg-0 float-right">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Landing Page
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <!-- <a class="dropdown-item" href="#">Action</a> -->
+                <%= link_to "Create Landing Page", new_landing_page_path, :class => 'dropdown-item' %>
+                <%= link_to "Show Landing Page", landing_pages_path, :class => 'dropdown-item' %>
+              </div>
+            </li>
+            <li class="nav-item dropdown my-2 my-lg-0 float-right">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Settings
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <!-- <a class="dropdown-item" href="#">Action</a> -->
+                <%= link_to "Profile", current_user, :class => 'dropdown-item' %>
+                <%= link_to "Edit Profile", edit_user_path(current_user), :class => 'dropdown-item' %>
+                <div class="divider"></div>
+                <%= link_to "Log out", logout_path, method: :delete, :class => 'dropdown-item' %>
+              </div>
+            </li>
+          <% else %> 
+            <li class="nav-item">
+              <%= link_to "Log in", login_path, :class => 'nav-link' %>
+            </li> 
+          <% end %> 
+        </ul>
+    </div>
   </nav>
 </header>

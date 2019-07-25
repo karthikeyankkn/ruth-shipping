@@ -1,0 +1,8 @@
+<li id="lead-<%= lead.id %>">
+  <span class="user"><%= link_to lead.user.name, lead.user %></span>
+  <span class="content"><%= lead.phone_number %></span>
+  <span class="email"><%= lead.email %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(lead.created_at) %> ago.
+  </span>
+</li>
