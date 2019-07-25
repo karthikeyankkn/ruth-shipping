@@ -1,5 +1,7 @@
 class LeadsController < ApplicationController
 	before_action :logged_in_user, only: [:create, :destroy, :show]
+  skip_before_action :verify_authenticity_token, :only => [:landing_page_lead]
+
   include HTTParty
 
 def new
@@ -39,9 +41,20 @@ def create
     redirect_to leads_url
   else
     # render 'static_pages/home'
-    render 'leads/new'
+    render 'leads/new'    
   end
 end
+
+# lead receive from landing page
+def landing_page_lead
+  @lead = Lead.new(lead_params)
+  if @lead.save
+    render json: @lead
+  else
+    render json: @lead.errors.full_messages
+  end
+end
+
 
 def import
   Lead.import(params[:file])
@@ -82,6 +95,6 @@ end
 private
 
   def lead_params
-    params.require(:lead).permit(:name, :email, :phone_number, :category, :city)
+    params.require(:lead).permit(:name, :email, :phone_number, :category, :city, :source, :host, :user_agent, :user_id)
   end
 end

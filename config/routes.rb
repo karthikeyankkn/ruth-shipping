@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     collection { post :import }
   end
   resources :leads
+  post '/landingpage_lead', to: 'leads#landing_page_lead'
   get 'download_sample_leads_csv', to: "leads#download_sample_leads_csv", as: 'download_sample_leads_csv'
 
 

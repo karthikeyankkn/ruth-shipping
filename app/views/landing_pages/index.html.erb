@@ -36,6 +36,11 @@
           <div class="col-md-3">
             <label><p class="text-secondary">( <%= time_ago_in_words(landing_page.created_at) %> ago )</p></label>
           </div>
+          <div class="col-md-9">
+            <a href="http://localhost:8080/spydy-landing-page/#!/?id=<%= landing_page.id %>&<%= landing_page.custom_url %>"  target="_blank">
+              http://localhost:8080/spydy-landing-page/#!/?id=<%= landing_page.id %>&<%= landing_page.custom_url %>
+            </a>
+          </div>
        		<div class="col-md-3 text-right">
             <%= link_to "", landing_page_path(landing_page.id), class:"fas fa-binoculars text-info lead-action" %>
             <%= link_to "", edit_landing_page_path(landing_page.id), class:"far fa-edit text-warning lead-action" %>

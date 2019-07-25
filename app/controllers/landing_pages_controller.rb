@@ -136,7 +136,9 @@ class LandingPagesController < ApplicationController
   			"testimonial_content": @landing_page.testimonial_content_2
   		}],
   		"email": @landing_page.email,
-  		"phone_number": @landing_page.phone_number
+  		"phone_number": @landing_page.phone_number,
+      "user_id": @landing_page.user_id
+
   	}
   	render json: ["landing_page_data": @landing_page_data], status: 200
 	end

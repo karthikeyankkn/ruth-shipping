@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_18_072714) do
+ActiveRecord::Schema.define(version: 2019_07_22_071654) do
 
   create_table "landing_pages", force: :cascade do |t|
     t.string "name"
@@ -65,6 +65,9 @@ ActiveRecord::Schema.define(version: 2019_07_18_072714) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "source"
+    t.string "host"
+    t.string "user_agent"
     t.index ["user_id", "created_at"], name: "index_leads_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_leads_on_user_id"
   end
