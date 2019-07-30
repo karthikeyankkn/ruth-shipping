@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_07_22_071654) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "landing_pages", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -62,7 +65,7 @@ ActiveRecord::Schema.define(version: 2019_07_22_071654) do
     t.integer "phone_number"
     t.string "category"
     t.string "city"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "source"
@@ -87,4 +90,5 @@ ActiveRecord::Schema.define(version: 2019_07_22_071654) do
     t.datetime "reset_sent_at"
   end
 
+  add_foreign_key "leads", "users"
 end
