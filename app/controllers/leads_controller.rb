@@ -12,8 +12,8 @@ def index
   # @lead = current_user.leads
 
   # pluck city and category
-  @leads_category = current_user.leads.distinct.pluck(:category)
-  @leads_city = current_user.leads.distinct.pluck(:city)
+  @leads_category = current_user.leads.uniq.pluck(:category)
+  @leads_city = current_user.leads.uniq.pluck(:city)
 
   # post sms
   @result = []

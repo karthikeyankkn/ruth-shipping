@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_22_071654) do
+ActiveRecord::Schema.define(version: 2019_07_31_122136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_07_22_071654) do
   create_table "landing_pages", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.integer "phone_number"
+    t.bigint "phone_number"
     t.text "query"
     t.string "logo"
     t.string "banner_image"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2019_07_22_071654) do
     t.text "testimonial_content_2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "testimonial_1_name"
     t.string "testimonial_2_name"
     t.string "section_3_description_1"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2019_07_22_071654) do
   create_table "leads", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.integer "phone_number"
+    t.bigint "phone_number"
     t.string "category"
     t.string "city"
     t.bigint "user_id"
