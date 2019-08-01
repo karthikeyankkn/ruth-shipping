@@ -66,46 +66,51 @@ class LandingPagesController < ApplicationController
   #     end
   #     render json: ["masked_leads": @masked_leads], status: 200
   	# @section_1 = []
+    if request.host == 'localhost'
+        fe_url = "http://localhost:3000"
+      else
+        fe_url = "https://digital-getspini.herokuapp.com/"
+    end
   @landing_page = LandingPage.find(params[:id])
   	@landing_page_data = {
   		"title": @landing_page.name,
   		"custom_url": @landing_page.custom_url,
-  		"logo": @landing_page.logo.url,
-  		"banner_image": @landing_page.banner_image.url,
+  		"logo": fe_url+(@landing_page.logo.url || "UNKNOWN"),
+  		"banner_image": fe_url+(@landing_page.banner_image.url || "UNKNOWN"),
   		"about_description": @landing_page.about_description,
   		"section_1": @section_1 = {
-  			"section_1_image": @landing_page.section_1_image.url,
+  			"section_1_image":  fe_url+(@landing_page.section_1_image.url || "UNKNOWN"),
   			"section_1_content": @landing_page.section_1_content
   		},
   		"section_2": @section_2 = {
-  			"section_2_image": @landing_page.section_2_image.url,
+  			"section_2_image": fe_url+(@landing_page.section_2_image.url || "UNKNOWN"),
   			"section_2_content": @landing_page.section_2_content
   		},
-  		"section_3": @section_3 = [{"section_3_icon": @landing_page.section_3_icon_1.url,
+  		"section_3": @section_3 = [{"section_3_icon": fe_url+(@landing_page.section_3_icon_1.url || "UNKNOWN"),
   			"section_3_description": @landing_page.section_3_description_1},
-  			{"section_3_icon": @landing_page.section_3_icon_2.url,
+  			{"section_3_icon": fe_url+(@landing_page.section_3_icon_2.url || "UNKNOWN"),
   			"section_3_description": @landing_page.section_3_description_2},
-  			{"section_3_icon": @landing_page.section_3_icon_3.url,
+  			{"section_3_icon": fe_url+(@landing_page.section_3_icon_3.url || "UNKNOWN"),
   			"section_3_description": @landing_page.section_3_description_3}
   		],
-  		"video_url": @landing_page.video_url.url,
+  		"video_url": fe_url+(@landing_page.video_url.url || "UNKNOWN"),
   		"gallery": @gallery = [{
-  			"gallery_img": @landing_page.gallery_img_1.url
+  			"gallery_img": fe_url+(@landing_page.gallery_img_1.url || "UNKNOWN")
   		},
   		{
-  			"gallery_img": @landing_page.gallery_img_2.url
+  			"gallery_img": fe_url+(@landing_page.gallery_img_2.url || "UNKNOWN")
   		},
   		{
-  			"gallery_img": @landing_page.gallery_img_3.url
+  			"gallery_img": fe_url+(@landing_page.gallery_img_3.url || "UNKNOWN")
   		},
   		{
-  			"gallery_img": @landing_page.gallery_img_4.url
+  			"gallery_img": fe_url+(@landing_page.gallery_img_4.url || "UNKNOWN")
   		},
   		{
-  			"gallery_img": @landing_page.gallery_img_5.url
+  			"gallery_img": fe_url+(@landing_page.gallery_img_5.url || "UNKNOWN")
   		},
   		{
-  			"gallery_img": @landing_page.gallery_img_6.url
+  			"gallery_img": fe_url+(@landing_page.gallery_img_6.url || "UNKNOWN") 
   		}
   		# {
   		# 	"gallery_img": @landing_page.gallery_img_7.url
@@ -121,10 +126,10 @@ class LandingPagesController < ApplicationController
   		# }
   		],
   		"our_client_logo": @our_client_logo = [
-  			{"our_client_logo": @landing_page.our_client_logo_1.url},
-  			{"our_client_logo": @landing_page.our_client_logo_2.url},
-  			{"our_client_logo": @landing_page.our_client_logo_3.url},
-  			{"our_client_logo": @landing_page.our_client_logo_4.url}
+  			{"our_client_logo": fe_url+(@landing_page.our_client_logo_1.url || "UNKNOWN")},
+  			{"our_client_logo": fe_url+(@landing_page.our_client_logo_2.url || "UNKNOWN")},
+  			{"our_client_logo": fe_url+(@landing_page.our_client_logo_3.url || "UNKNOWN")},
+  			{"our_client_logo": fe_url+(@landing_page.our_client_logo_4.url || "UNKNOWN")}
   			# "our_client_logo_5": @landing_page.our_client_logo_5.url
   		],
   		"testimonial": @testimonial = [{
