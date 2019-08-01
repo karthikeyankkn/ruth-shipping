@@ -37,8 +37,8 @@
             <label><p class="text-secondary">( <%= time_ago_in_words(landing_page.created_at) %> ago )</p></label>
           </div>
           <div class="col-md-9">
-            <a href="http://localhost:8080/spydy-landing-page/#!/?id=<%= landing_page.id %>&<%= landing_page.custom_url %>"  target="_blank">
-              http://localhost:8080/spydy-landing-page/#!/?id=<%= landing_page.id %>&<%= landing_page.custom_url %>
+            <a href="<%= request.host == "localhost" ? "http://localhost:8080/" : "https://digital-getspini.herokuapp.com/" %>spydy-landing-page/#!/?id=<%= landing_page.id %>/<%= landing_page.custom_url %>"  target="_blank">
+               <%= request.host != "localhost" ? "http://localhost:8080/" : "https://digital-getspini.herokuapp.com/" %>spydy-landing-page/#!/?id=<%= landing_page.id %>/<%= landing_page.custom_url %>
             </a>
           </div>
        		<div class="col-md-3 text-right">
