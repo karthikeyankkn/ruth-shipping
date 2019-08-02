@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_31_131348) do
+ActiveRecord::Schema.define(version: 2019_08_02_101138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,9 @@ ActiveRecord::Schema.define(version: 2019_07_31_131348) do
     t.string "section_3_description_2"
     t.string "section_3_description_3"
     t.string "custom_url"
+    t.string "section_3_title_1"
+    t.string "section_3_title_2"
+    t.string "section_3_title_3"
   end
 
   create_table "leads", force: :cascade do |t|
@@ -71,6 +74,7 @@ ActiveRecord::Schema.define(version: 2019_07_31_131348) do
     t.string "source"
     t.string "host"
     t.string "user_agent"
+    t.string "query"
     t.index ["user_id", "created_at"], name: "index_leads_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_leads_on_user_id"
   end

@@ -87,10 +87,13 @@ class LandingPagesController < ApplicationController
   			"section_2_content": @landing_page.section_2_content
   		},
   		"section_3": @section_3 = [{"section_3_icon": fe_url+(@landing_page.section_3_icon_1.url || "UNKNOWN"),
+        "section_3_title": @landing_page.section_3_title_1,
   			"section_3_description": @landing_page.section_3_description_1},
   			{"section_3_icon": fe_url+(@landing_page.section_3_icon_2.url || "UNKNOWN"),
+          "section_3_title": @landing_page.section_3_title_2,
   			"section_3_description": @landing_page.section_3_description_2},
   			{"section_3_icon": fe_url+(@landing_page.section_3_icon_3.url || "UNKNOWN"),
+          "section_3_title": @landing_page.section_3_title_3,
   			"section_3_description": @landing_page.section_3_description_3}
   		],
   		"video_url": fe_url+(@landing_page.video_url.url || "UNKNOWN"),
@@ -151,7 +154,7 @@ class LandingPagesController < ApplicationController
 	private
 
     def landing_page_params
-      params.require(:landing_page).permit( :name, :email, :phone_number, :query, :logo, :banner_image, :about_description, :section_1_image, :section_2_image, :section_1_content, :section_2_content, :video_url, :section_3_icon_1, :section_3_icon_2, :section_3_icon_3, :gallery_img_1, :gallery_img_2, :gallery_img_3, :gallery_img_4, :gallery_img_5, :gallery_img_6, :gallery_img_7, :gallery_img_8, :gallery_img_9, :gallery_img_10, :our_client_logo_1, :our_client_logo_2, :our_client_logo_3, :our_client_logo_4, :our_client_logo_5, :testimonial_content_1, :testimonial_content_2, :user_id, :testimonial_1_name, :testimonial_2_name, :section_3_description_1, :section_3_description_2, :section_3_description_3, :custom_url)
+      params.require(:landing_page).permit( :name, :email, :phone_number, :query, :logo, :banner_image, :about_description, :section_1_image, :section_2_image, :section_1_content, :section_2_content, :video_url, :section_3_icon_1, :section_3_icon_2, :section_3_icon_3, :gallery_img_1, :gallery_img_2, :gallery_img_3, :gallery_img_4, :gallery_img_5, :gallery_img_6, :gallery_img_7, :gallery_img_8, :gallery_img_9, :gallery_img_10, :our_client_logo_1, :our_client_logo_2, :our_client_logo_3, :our_client_logo_4, :our_client_logo_5, :testimonial_content_1, :testimonial_content_2, :user_id, :testimonial_1_name, :testimonial_2_name, :section_3_description_1, :section_3_description_2, :section_3_description_3, :custom_url, :section_3_title_1, :section_3_title_2, :section_3_title_3)
     end
 
 end
