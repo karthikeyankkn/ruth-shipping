@@ -51,6 +51,25 @@
  .mb-100{
   margin-bottom: 100px;
  }
+ .bg-container-img{
+  background-image: url('containers.jpg');
+  background-size:cover; 
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  height:100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: ;
+  top: 0;
+ }
+ .login-style{
+    width: 300px;
+    margin: 200px auto 0;
+    background: #ffffffd6;
+    padding: 10px;
+    box-shadow: 0px 0px 5px #fff;
+ }
  select{
   display: block;
     width: 100%;

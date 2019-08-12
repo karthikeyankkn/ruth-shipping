@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_02_101138) do
+ActiveRecord::Schema.define(version: 2019_08_11_192624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "imports", force: :cascade do |t|
+    t.bigint "job_no"
+    t.string "imp"
+    t.string "supplier_name"
+    t.string "cargo_name"
+    t.string "port_of_loading"
+    t.string "line"
+    t.string "bl_no"
+    t.string "status"
+    t.string "_20_inch"
+    t.string "_40_inch"
+    t.string "vsl_name"
+    t.string "free_days"
+    t.bigint "lot_no"
+    t.bigint "shifting"
+    t.bigint "weight"
+    t.datetime "arrived"
+    t.datetime "dem_upto"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+  end
 
   create_table "landing_pages", force: :cascade do |t|
     t.string "name"

@@ -1,23 +1,29 @@
-<% provide(:title, "Log in") %>
+<div class="bg-container-img">
+  <% provide(:title, "Log in") %>
 
-<div class="container mt-100">
-  <h2 class="text-center">Login</h2>
-  <div class="row justify-content-center">
-    <%= form_for(:session, url: login_path) do |f| %>
-      <div class="form-group">
-        <%= f.email_field :email, placeholder: "Enter email", class:"form-control" %>
-      </div>
-      <div class="form-group">
-        <%= f.password_field :password, placeholder: "Enter password", class:"form-control" %>
-      </div>
-      <div class="form-group form-check">
-        <label class="form-check-label">
-          <%= link_to "forgot password", new_password_reset_path %>
-        </label>
-      </div>
-      <button type="submit" class="btn btn-primary">Login</button>
-
-      <p>Are you a New user? <a href="/users/new">Signup</a></p>
-   <% end %> 
+  <div class="login-style">
+    <h2 class="text-center">Login</h2>
+    <div class="row justify-content-center mt-20">
+      <%= form_for(:session, url: login_path) do |f| %>
+        <div class="form-group">
+          <%= f.email_field :email, placeholder: "Enter email", class:"form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.password_field :password, placeholder: "Enter password", class:"form-control" %>
+        </div>
+        <div class="form-group form-check">
+          <label class="form-check-label">
+            <%= link_to "forgot password", new_password_reset_path %>
+          </label>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Login</button>  
+        </div>
+        <div class="mt-20">
+          <p>Are you a New user? <a href="/users/new">Signup</a></p>
+        </div>
+     <% end %> 
+    </div>
   </div>
+
 </div>

@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   has_many :leads, dependent: :destroy
   has_many :landing_pages, dependent: :destroy
+  has_many :imports
 
 	# before_save { email.downcase! }
 	validates :name,  presence: true, length: { maximum: 50 }

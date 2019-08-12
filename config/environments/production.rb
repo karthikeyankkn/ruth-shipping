@@ -98,8 +98,8 @@ Rails.application.configure do
     domain: "example.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "spinileads@gmail.com",
-    password: "Spinileads123!"
+    user_name: "kknmalar2@gmail.com",
+    password: "karthik3yan"
   }
   config.action_mailer.default_url_options = { host: "digital-getspini.herokuapp.com" }
 

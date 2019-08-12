@@ -1,0 +1,67 @@
+<div class="jumbotron text-center">
+  <h1><%= @import.imp %></h1>
+  <p class="text-secondary">( <%= time_ago_in_words(@import.created_at) %> ago )</p> 
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-3 text-dark">
+      <h3>Job ID</h3>
+      <p class="text-secondary"><%= @import.job_no %></p>
+    </div>
+    <div class="col-3 text-dark">
+      <h3>Commodity</h3>
+      <p class="text-secondary"><%= @import.supplier_name %> / <%= @import.cargo_name %> / <%= @import.port_of_loading %></p>
+    </div>
+    <div class="col-3 text-dark">
+      <h3>Line</h3> 
+      <p class="text-secondary"><%= @import.line %></p>
+    </div>
+    <div class="col-3 text-dark">
+      <h3>BL No</h3>
+      <p class="text-secondary"><%= @import.bl_no %></p>
+    </div>
+    <hr>
+    <div class="col-3 text-dark">
+      <h3>Status</h3>
+      <p class="text-secondary"><%= @import.status %></p>
+    </div>
+    <div class="col-3 text-dark">
+      <h3>20'</h3>
+      <p class="text-secondary"><%= @import._20_inch %></p>
+    </div>
+    <div class="col-3 text-dark">
+      <h3>40'</h3>
+      <p class="text-secondary"><%= @import._40_inch %></p>
+    </div>
+    <div class="col-3 text-dark">
+      <h3>LOT No</h3>
+      <p class="text-secondary"><%= @import.lot_no %></p>
+    </div>
+    <div class="col-3 text-dark">
+      <h3>Arrived</h3>
+      <p class="text-secondary"><%= @import.arrived %></p>
+    </div>
+    <div class="col-3 text-dark">
+      <h3>Free days</h3>
+      <p class="text-secondary"><%= @import.free_days %></p>
+    </div>
+    <div class="col-3 text-dark">
+      <h3>Dem Upto</h3>
+      <p class="text-secondary"><%= @import.dem_upto %></p>
+    </div>
+    <div class="col-3 text-dark">
+      <h3>Shifting</h3>
+      <p class="text-secondary"><%= @import.shifting %></p>
+    </div>
+    <div class="col-3 text-dark">
+      <h3>Vsl Name</h3>
+      <p class="text-secondary"><%= @import.vsl_name %></p>
+    </div>
+    <div class="col-3 text-dark">
+      <h3>Weight</h3>
+      <p class="text-secondary"><%= @import.weight %></p>
+    </div>
+    
+  </div>
+</div>
