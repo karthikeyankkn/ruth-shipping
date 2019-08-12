@@ -62,6 +62,18 @@
       <h3>Weight</h3>
       <p class="text-secondary"><%= @import.weight %></p>
     </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="text-dark">
+      <h3>Send email</h3>
+      <form class="form-inline" accept-charset="UTF-8" action="/send_individual_import_report_mail" method="post">
+        <input type="email" class="form-control mb-2 mr-sm-2" id="email" name="sp_data[email]" placeholder="Enter email">
+        <input type="hidden" name="sp_data[import_id]" value="<%= @import.id %>">
+        <button type="submit" class="btn btn-primary mb-2 loading-icon">Send</button>
+      </form>
+    </div>
+
     
   </div>
 </div>

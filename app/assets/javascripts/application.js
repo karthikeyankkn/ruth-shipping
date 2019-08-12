@@ -15,3 +15,9 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+	$(".loading-icon").click(function(){
+		$(".ruth-loading-icon").show();
+	});
+});

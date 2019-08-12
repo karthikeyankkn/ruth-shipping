@@ -1,9 +1,8 @@
 <div class="container-fluid">
-	<div class="mt-20">
-		<div class="">
-			<%= form_for @import do |f| %>
-			  <%= render 'shared/error_messages', object: f.object %>
-		</div>
+	<%= form_for @import do |f| %>
+		<div class="mt-20">
+			<%= render 'shared/error_messages', object: f.object %>
+		</div>	
 		<div class="row">
 			<div class="col-sm-3 mt-20">
 		  	<label>Job No:</label>
@@ -35,7 +34,7 @@
 		  </div>
 		  <div class="col-sm-3 mt-20">
 		  	<label>status:</label>
-		  	<%= f.select :status, options_for_select(["Arts and Entertainment","Automotive", "Beauty and Fitness", "Books and Literature", "Business and Industrial Markets", "Computers and Electronics", "Finance", "Food and Drink", "Games", "Healthcare", "Hobbies and Leisure", "Home and Garden", "Internet and Telecom", "Jobs and Education", "Law and Government", "News", "Online Communities", "People and Society", "Pets and Animals", "Property", "Reference", "Science", "Shopping", "Sports", "Travel", "Other"], :selected => f.object.status) %>
+		  	<%= f.select :status, options_for_select(["exam over", "Duty paid", "riginal/check", "COPY", "original", "ready duty"], :selected => f.object.status) %>
 		  </div>
 		  <div class="col-sm-3 mt-20">
 		  	<label>20':</label>
@@ -77,7 +76,6 @@
 		  <div class="col-sm-12 mt-20 text-center">
 		  	<%= f.submit "Post", class: "btn btn-primary" %>
 		  </div>
-		<% end %>
 		</div>
-	</div>
+	<% end %>
 </div>

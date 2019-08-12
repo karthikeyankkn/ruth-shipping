@@ -38,4 +38,6 @@ Rails.application.routes.draw do
 
   # imports
   resources :imports
+  # email post
+  post '/send_individual_import_report_mail', to: "imports#send_individual_import_report_mail", as: "send_individual_import_report_mail"
 end

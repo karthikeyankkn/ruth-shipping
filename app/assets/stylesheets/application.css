@@ -85,3 +85,25 @@
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
  }
+ .ruth-loading-icon{
+    display: none;
+    text-align: center;
+    background: #00040973;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding-top: 30%;
+ }
+ .import-filter-container{
+    background: #fff;
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 3px;
+    box-shadow: 0 0 3px #888;
+ }
+ .alert{
+    z-index: 10;
+    top: -55px;
+ }

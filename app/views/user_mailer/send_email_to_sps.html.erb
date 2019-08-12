@@ -1,0 +1,45 @@
+<p>Dear sir,</p>
+
+<p><b>Please note the following arrival details: </b></p>
+
+<table border="1" style="border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Supplier Name</th>
+      <th>Port</th>
+      <th>Line</th>
+      <th>Bl.No</th>
+      <th>No of CTRN</th>
+      <th>Cargo Name</th>
+      <th>Weight</th>
+      <th>ETA</th>
+      <th>Free Days</th>
+      <th>In Hand</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @sp_data[:import][:id] %></td>
+      <td><%= @sp_data[:import][:supplier_name] %></td>
+      <td><%= @sp_data[:import][:port_of_loading] %></td>
+      <td><%= @sp_data[:import][:line] %></td>
+      <td><%= @sp_data[:import][:bl_no] %></td>
+      <td><%= @sp_data[:import][:_40_inch] %> * 40 </td>
+      <td><%= @sp_data[:import][:cargo_name] %></td>
+      <td><%= @sp_data[:import][:weight] %> Kg</td>
+      <td><%= @sp_data[:import][:arrived].strftime("%d-%m-%Y") %></td>
+      <td><%= @sp_data[:import][:free_days] %></td>
+      <td><%= @sp_data[:import][:status] %></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><b>Please Note: </b><b>ID:</b>  Request for original documents</p>
+
+<p>Free time <%= @sp_data[:import][:free_days] %>. <%= @sp_data[:import][:arrived].strftime("%d-%m-%Y") %> to <%= @sp_data[:import][:dem_upto].strftime("%d-%m-%Y") %>.  Demorage starts on next day of dem.</p>
+
+
+<p>Thanks,</p>
+<p>Karthikeyan.S</p>
+                                                    

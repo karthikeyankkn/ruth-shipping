@@ -2,8 +2,7 @@ class ImportsController < ApplicationController
 
 	before_action :logged_in_user, only: [:create, :destroy, :show]
 	before_action :set_import, only: [:edit, :update]
-
-  # skip_before_action :verify_authenticity_token, :only => [:landing_page_lead]
+  skip_before_action :verify_authenticity_token, :only => [:send_individual_import_report_mail]
 
   include HTTParty
 
@@ -12,7 +11,16 @@ def new
 end
 
 def index
- @imports = Import.all
+  # show uniqe data
+  @import_imp = current_user.imports.uniq.pluck(:imp)
+  @import_line = current_user.imports.uniq.pluck(:line)
+  @import_status = current_user.imports.uniq.pluck(:status)
+
+  @imports = Import.where(nil) # creates an anonymous scope
+  @imports = @imports.imp(params[:imp]) if params[:imp].present?
+  @imports = @imports.line(params[:line]) if params[:line].present?
+  @imports = @imports.status(params[:status]) if params[:status].present?
+ # @imports = Import.all
 end
 
 def create
@@ -46,6 +54,22 @@ def destroy
   @import = Import.find(params[:id])
   @import.destroy
   flash[:danger] = " Data deleted successfully..!"
+  redirect_to imports_path
+end
+
+# send_individual_import_report_mail
+def send_individual_import_report_mail
+  @import = Import.find(params[:sp_data][:import_id])
+  @sp_email_data = params[:sp_data][:email]
+  # # debugger
+  # puts "------------------------------"
+  # puts @sp_email_data
+  # puts "------------------------------"
+  @sp_delivery_details = {}
+  @sp_delivery_details[:email] = @sp_email_data
+  @sp_delivery_details[:import] = @import
+  UserMailer.send_email_to_sps(@sp_delivery_details).deliver_now
+  flash[:success] = "Mail sent successfully..!"
   redirect_to imports_path
 end
 
