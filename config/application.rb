@@ -10,7 +10,7 @@ module MarketingTools
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
-
+    config.assets.initialize_on_precompile = false
     config.action_dispatch.default_headers = {
 		  'Access-Control-Allow-Origin' => '*',
 		  'Access-Control-Request-Method' => %w{GET POST OPTIONS}.join(",")
