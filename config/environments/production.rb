@@ -101,7 +101,7 @@ Rails.application.configure do
     user_name: "kknmalar2@gmail.com",
     password: "karthik3yan"
   }
-  config.action_mailer.default_url_options = { host: "digital-getspini.herokuapp.com" }
+  config.action_mailer.default_url_options = { host: "ruth-shipping.herokuapp.com" }
 
 
 

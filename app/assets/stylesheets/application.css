@@ -52,7 +52,7 @@
   margin-bottom: 100px;
  }
  .bg-container-img{
-  background-image: url('containers.jpg');
+  background-image: url('https://images.unsplash.com/photo-1493946740644-2d8a1f1a6aff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1068&q=80');
   background-size:cover; 
   background-repeat:no-repeat;
   background-attachment:fixed;
