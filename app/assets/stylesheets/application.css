@@ -107,3 +107,28 @@
     z-index: 10;
     top: -55px;
  }
+ .import-filter-container form:first-child{
+    border-right: 1px dashed black;
+ }
+
+ /*color scheme*/
+ .bgn-dark{
+  background: #ebf3f7;
+ }
+ .bgn-light{
+  background: #f9fefe;
+ }
+ .h-light{
+  color: #e98074;
+ }
+ .h-dark{
+  color: #e85a4e;
+ }
+ .text-p{
+  color: #8e8d8a;
+ }
+ hr {
+    margin: 5px 0 30px 0;
+    border-bottom: 2px solid #2bd3f8;
+    width: 45px;
+}

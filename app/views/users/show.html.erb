@@ -1,23 +1,12 @@
-
-
-
-
-<% provide(:title, @user.name) %>
-<div class="container-fluid">
-  <div class="row">
-    <aside class="col-md-4">
-      <section class="user_info">
-        <h1>Hello <u><%= @user.name %></u></h1>
-        <h4>Your email address is: <i><%= @user.email %></i></h4>
-      </section>
-    </aside>
-    <div class="col-md-8">
-      <% if @user.leads.any? %>
-        <h3>Leads (<%= @user.leads.count %>)</h3>
-        <ol class="leads">
-          <%= render @leads %>
-        </ol>
-      <% end %>
+<div class="container text-center mt-50">
+  <h2>Your Profile</h2>
+  <div class="card" style="width:400px; margin:20px auto;">
+    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title"><%= @user.name %></h4>
+      <p class="card-text"><%= @user.email %></p>
+      <p class="card-text">Your Role: Admin</p>
+      <a href="/users/<%= @user.id %>/edit" class="btn btn-primary stretched-link">Edit Profile</a>
     </div>
   </div>
 </div>

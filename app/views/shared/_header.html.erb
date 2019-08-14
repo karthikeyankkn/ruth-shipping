@@ -35,8 +35,6 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <!-- <a class="dropdown-item" href="#">Action</a> -->
                 <%= link_to "Profile", current_user, :class => 'dropdown-item' %>
-                <%= link_to "Edit Profile", edit_user_path(current_user), :class => 'dropdown-item' %>
-                <div class="divider"></div>
                 <%= link_to "Log out", logout_path, method: :delete, :class => 'dropdown-item' %>
               </div>
             </li>

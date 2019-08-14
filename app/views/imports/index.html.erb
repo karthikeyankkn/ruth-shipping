@@ -1,47 +1,62 @@
-<div class="import-filter-container container">
-	<form class="">
-		<div class="row">
-			<div class="form-group col-md-4">
-		    <label for="email" class="mr-sm-2">IMP</label>
-		  	<select class="form-control" id="sel1" name="imp">
-			    <option selected disabled>Select Imp</option>
-			    <% @import_imp.each do |imp| %>
-			    	<option><%= imp %></option>
-			    <% end %>
-			  </select>
-	  	</div>
-	  	<div class="form-group col-md-4">
-		    <label for="email" class="mr-sm-2">IMP</label>
-		  	<select class="form-control" id="sel1" name="line">
-		  		<option selected disabled>Select Line</option>
-			    <option>sea</option>
-			    <option>msk</option>
-			    <option>MSK</option>
-			  </select>
-	  	</div>
-	  	<div class="form-group col-md-4">
-		    <label for="email" class="mr-sm-2">IMP</label>
-		  	<select class="form-control" id="sel1" name="status">
-		  		<option selected disabled>Select Status</option>
-			    <option>COPY</option>
-			    <option>Duty paid</option>
-			    <option>riginal/check</option>
-			  </select>
-	  	</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<button type="submit" class="btn btn-primary mb-2">Filter</button>
-	  		<a href="/imports" class="btn btn-danger mb-2"><i class="fas fa-sync"></i></a>
+<div class="container-fluid">
+	<div class="import-filter-container row">
+		<form class="col-md-8">
+			<div class="row">
+				<div class="form-group col-md-4">
+			    <label for="email" class="mr-sm-2">IMP</label>
+			  	<select class="form-control" id="sel1" name="imp">
+				    <option selected disabled>Select Imp</option>
+				    <% @import_imp.each do |imp| %>
+				    	<option><%= imp %></option>
+				    <% end %>
+				  </select>
+		  	</div>
+		  	<div class="form-group col-md-4">
+			    <label for="email" class="mr-sm-2">Line</label>
+			  	<select class="form-control" id="sel1" name="line">
+			  		<option selected disabled>Select Line</option>
+				    <% @import_line.each do |line| %>
+				    	<option><%= line %></option>
+				    <% end %>
+				  </select>
+		  	</div>
+		  	<div class="form-group col-md-4">
+			    <label for="email" class="mr-sm-2">Status</label>
+			  	<select class="form-control" id="sel1" name="status">
+			  		<option selected disabled>Select Status</option>
+				    <% @import_status.each do |status| %>
+				    	<option><%= status %></option>
+				    <% end %>			  
+				  </select>
+		  	</div>
 			</div>
-		</div>
-	</form>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<button type="submit" class="btn btn-primary mb-2">Filter</button>
+		  		<a href="/imports" class="btn btn-danger mb-2"><i class="fas fa-sync"></i></a>
+				</div>
+			</div>
+		</form>
+
+		<form action="/imp_report.csv" method="GET" class="col-md-4">
+			<label for="email" class="mr-sm-2 text-success">Select IMP fo download Report</label>
+			<select class="form-control mb-2" id="sel1" name="imp">
+		    <option selected disabled>Select Imp</option>
+		    <% @import_imp.each do |imp| %>
+		    	<option><%= imp %></option>
+		    <% end %>
+		  </select>
+		  <div class="col-md-12 text-center">
+				<button type="submit" class="btn btn-success text-center"><i class="fas fa-file-download"></i></button>
+			</div>
+		</form>
+	</div>
 </div>
 
 <h1 class="text-center">Import details</h1>
 <div class="container-fluid">
 	<div class="col-md-12">
-		<table class="table table-striped">
+		<table class="table table-striped table-light">
 	    <thead>
 	      <tr>
 	      	<th>Id</th>

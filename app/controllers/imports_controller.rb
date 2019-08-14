@@ -12,9 +12,9 @@ end
 
 def index
   # show uniqe data
-  @import_imp = current_user.imports.uniq.pluck(:imp)
-  @import_line = current_user.imports.uniq.pluck(:line)
-  @import_status = current_user.imports.uniq.pluck(:status)
+  @import_imp = Import.select(:imp).map(&:imp).uniq
+  @import_line = Import.select(:line).map(&:line).uniq
+  @import_status = Import.select(:status).map(&:status).uniq
 
   @imports = Import.where(nil) # creates an anonymous scope
   @imports = @imports.imp(params[:imp]) if params[:imp].present?
@@ -71,6 +71,15 @@ def send_individual_import_report_mail
   UserMailer.send_email_to_sps(@sp_delivery_details).deliver_now
   flash[:success] = "Mail sent successfully..!"
   redirect_to imports_path
+end
+
+# Export imp report
+def imp_report
+  @imp_report = Import.where(imp: params[:imp])
+  respond_to do |format|
+    format.html
+    format.csv { send_data @imp_report.to_csv }
+  end
 end
 
 private

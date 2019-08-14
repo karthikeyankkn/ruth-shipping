@@ -1,9 +1,57 @@
-<div class="container-fluid">
-	<h2 class="text-center">Dashboard</h2>
+<div class="container-fluid mt-20">
 	<div class="row">
-		<div class="col-4">
-			<h2><%= @lead_count %></h2>
-			<p>Leads</p>
+		<div class="d-flex col-md-2 text-center">
+		  <div class="p-2 shadow-sm p-4 mb-4 bgn-light flex-fill text-uppercase">
+		  	<h4 class="text-secondary">Total Imp</h4>
+		  	<h1 class="text-info"><%= @imp_count %></h1>
+		  </div>
+		</div>
+		<div class="d-flex col-md-2 text-center">
+		  <div class="p-2 shadow-sm p-4 mb-4 bgn-light flex-fill text-uppercase">
+		  	<h4 class="text-secondary">Ready Duty</h4>
+		  	<h1 class="text-danger"><%= @ready_duty_count %></h1>
+		  </div>
+		</div>
+		<div class="d-flex col-md-2 text-center">
+		  <div class="p-2 shadow-sm p-4 mb-4 bgn-light flex-fill text-uppercase">
+		  	<h4 class="text-secondary">Exam Over</h4>
+		  	<h1 class="text-success"><%= @exam_over_count %></h1>
+		  </div>
+		</div>
+		<div class="d-flex col-md-2 text-center">
+		  <div class="p-2 shadow-sm p-4 mb-4 bgn-light flex-fill text-uppercase">
+		  	<h4 class="text-secondary">Copy</h4>
+		  	<h1 class="text-primary"><%= @copy_count %></h1>
+		  </div>
+		</div>
+		<div class="d-flex col-md-2 text-center">
+		  <div class="p-2 shadow-sm p-4 mb-4 bgn-light flex-fill text-uppercase">
+		  	<h4 class="text-secondary">Duty paid</h4>
+		  	<h1 class="text-warning"><%= @duty_paid_count %></h1>
+		  </div>
+		</div>
+		<div class="d-flex col-md-2 text-center">
+		  <div class="p-2 shadow-sm p-4 mb-4 bgn-light flex-fill text-uppercase">
+		  	<h4 class="text-secondary">Riginal</h4>
+		  	<h1 class="text-info"><%= @riginal_check_count %></h1>
+		  </div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="d-flex col-md-8">
+		  <div class="p-2 shadow-sm p-4 mb-4 bgn-light flex-fill text-uppercase">
+		  	<h4 class="text-secondary">Total Imports By Day</h4>
+		  	<hr>
+		  	<%= line_chart Import.group_by_day(:created_at).count, download: "Lead_chart", colors: ["#75d3f3"] %>
+		  	<h1 class="text-danger"></h1>
+		  </div>
+		</div>
+		<div class="d-flex col-md-4">
+		  <div class="p-2 shadow-sm p-4 mb-4 bgn-light flex-fill text-uppercase">
+		  	<h4 class="text-secondary">IMP Type</h4>
+		  	<hr>
+		  	<%= pie_chart Import.group(:imp).count, download: "Lead_chart", colors: ["#75d3f3", "#e2754d", '#60a07a', '#687fa9', '#f3cd6c', '#dd4b45'], donut: true %>
+		  </div>
 		</div>
 	</div>
 </div>

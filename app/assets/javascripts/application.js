@@ -15,9 +15,19 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require chartkick
+//= require Chart.bundle
 
 $(document).ready(function(){
+	
+	// loading icon show
 	$(".loading-icon").click(function(){
 		$(".ruth-loading-icon").show();
 	});
+
+	// hide alert afer 3 sec.
+	setTimeout(function() {
+      $('.alert').slideUp('fast');
+  }, 3000);
+
 });

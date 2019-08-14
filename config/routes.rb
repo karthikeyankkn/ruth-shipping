@@ -40,4 +40,6 @@ Rails.application.routes.draw do
   resources :imports
   # email post
   post '/send_individual_import_report_mail', to: "imports#send_individual_import_report_mail", as: "send_individual_import_report_mail"
+  # download imp report
+  get '/imp_report.csv', to: "imports#imp_report", as:"imp_report"
 end
