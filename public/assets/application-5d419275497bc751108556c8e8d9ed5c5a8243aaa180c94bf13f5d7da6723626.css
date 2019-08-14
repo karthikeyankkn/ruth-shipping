@@ -1,0 +1,135 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+ .mt-10{
+  margin-top: 10px;
+ }
+ .mt-20{
+  margin-top: 20px;
+ }
+ .mt-30{
+  margin-top: 30px;
+ }
+ .mt-40{
+  margin-top: 40px;
+ }
+ .mt-50{
+  margin-top: 50px;
+ }
+ .mt-100{
+  margin-top: 100px;
+ }
+
+ .mb-10{
+  margin-bottom: 10px;
+ }
+ .mb-20{
+  margin-bottom: 20px;
+ }
+ .mb-30{
+  margin-bottom: 30px;
+ }
+ .mb-40{
+  margin-bottom: 40px;
+ }
+ .mb-50{
+  margin-bottom: 50px;
+ }
+ .mb-100{
+  margin-bottom: 100px;
+ }
+ .bg-container-img{
+  background-image: url('containers.jpg');
+  background-size:cover; 
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  height:100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: ;
+  top: 0;
+ }
+ .login-style{
+    width: 300px;
+    margin: 200px auto 0;
+    background: #ffffffd6;
+    padding: 10px;
+    box-shadow: 0px 0px 5px #fff;
+ }
+ select{
+  display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+ }
+ .ruth-loading-icon{
+    display: none;
+    text-align: center;
+    background: #00040973;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding-top: 30%;
+ }
+ .import-filter-container{
+    background: #fff;
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 3px;
+    box-shadow: 0 0 3px #888;
+ }
+ .alert{
+    z-index: 10;
+    top: -55px;
+ }
+ .import-filter-container form:first-child{
+    border-right: 1px dashed black;
+ }
+
+ /*color scheme*/
+ .bgn-dark{
+  background: #ebf3f7;
+ }
+ .bgn-light{
+  background: #f9fefe;
+ }
+ .h-light{
+  color: #e98074;
+ }
+ .h-dark{
+  color: #e85a4e;
+ }
+ .text-p{
+  color: #8e8d8a;
+ }
+ hr {
+    margin: 5px 0 30px 0;
+    border-bottom: 2px solid #2bd3f8;
+    width: 45px;
+}
