@@ -42,7 +42,7 @@ gem 'groupdate'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'httparty', '~> 0.16.2'
+gem 'httparty', '~> 0.21.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
